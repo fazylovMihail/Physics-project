@@ -1,4 +1,4 @@
-git// для работы с карточками
+// для работы с карточками
 class Product{
     constructor(
         name,
