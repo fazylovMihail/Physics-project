@@ -4,12 +4,14 @@ class Product{
         name,
         title,
         fontSize,
-        productText
+        // classCountGlobal, //Когда тыкаешь на любую из кнопок в в product-card-conteiner
+        // classCount //Когда тыкаешь на любую из кнопок в в choose-window
     ){
         this.name = name
         this.title = title
         this.fontSize = fontSize
-        this.productText = productText
+        // this.classCountGlobal = classCountGlobal
+        // this.classCount = classCount
     }
     ToHtml(){
         return `<div style="font-size:${this.fontSize}" title="${this.title}" class="product-card">${this.name}</div>`
@@ -17,8 +19,8 @@ class Product{
     ToProductName(){
         return `${this.title}`
     }
-    ToProductWindow(){
-        return `${this.productText}`
+    DrowProductContentName(){
+        return `<div class="choose-window-btn">${this.name}</div>`
     }
 }
 
@@ -191,85 +193,239 @@ imgLocator.addEventListener('mouseout',()=>{
 let productWindowChooseBtn = document.querySelectorAll('.choose-btn')
 // Выбор формулы
 let productWindowBtn = document.querySelectorAll('.choose-window-btn')
+// Контрейнер для выбора формулы
+let chooseWindow = document.querySelector('.choose-window')
 
-let productTextCards = []
+let productWindowNameContent = [
+    ['Скорость','Плотность','Сила тяжести','Сила упругости','Вес тела','Давление в твердых телах','Давление в жидкости (газе)','Архимедова сила','Сила трения','Механическая работа','Мощность','Кинетическая энергия','Потенциальная энергия','Момент силы','КПД']
+    ['Количество теплоты при нагревании','Количество теплоты при охлаждении','Теплота сгорания','Теплота плавления','Теплота парообразования','Закон Кулона','Сила электрического тока','Сопротивление проводника','Электрическое напряжение','Последовательное соединение проводников','Параллельное соединение проводников','Работа тока','Мощность тока','Закон Джоуля-Ленца']
+]
 
-let productTextCards1 = []
-productTextCards.push(productTextCards1)
-let productTextCards2 = []
-productTextCards.push(productTextCards2)
-let productTextCards3 = []
-productTextCards.push(productTextCards3)
-
-let productTextCard1 = new Product(
-    null,
-    null,
-    null,
-    'q'
-)
-productTextCards1.push(productTextCard1)
-let productTextCard2 = new Product(
-    null,
-    null,
-    null,
-    'w'
-)
-productTextCards1.push(productTextCard2)
-let productTextCard3 = new Product(
-    null,
-    null,
-    null,
-    'e'
-)
-productTextCards1.push(productTextCard3)
-let productTextCard4 = new Product(
-    null,
-    null,
-    null,
-    'r'
-)
-productTextCards2.push(productTextCard4)
-let productTextCard5 = new Product(
-    null,
-    null,
-    null,
-    't'
-)
-productTextCards2.push(productTextCard5)
-let productTextCard6 = new Product(
-    null,
-    null,
-    null,
-    'y'
-)
-productTextCards2.push(productTextCard6)
-let productTextCard7 = new Product(
-    null,
-    null,
-    null,
-    'u'
-)
-productTextCards3.push(productTextCard7)
-productTextCards1.push(productTextCard1)
-let productTextCard8 = new Product(
-    null,
-    null,
-    null,
-    'i'
-)
-productTextCards3.push(productTextCard8)
-let productTextCard9 = new Product(
-    null,
-    null,
-    null,
-    'o'
-)
-productTextCards3.push(productTextCard9)
-
-for(let i=0;i<productWindowChooseBtn.length;i++){
+for(let i = 0;i<productWindowChooseBtn.length;i++){
     productWindowChooseBtn[i].addEventListener('click',()=>{
-        for(let g=0;g<productWindowBtn.length;g++){
-            productWindowBtn[g].innerHTML = productTextCards[productWindowCount][g].ToProductWindow()
+        for(let g=0;g<choose[productCount][i].length;g++){
+            chooseWindow.innerHTML = null
+            setTimeout(()=>{
+                chooseWindow.innerHTML += choose[productCount][i][g].DrowProductContentName()
+            },0.3)
         }
     })
 }
+
+let choose = []
+
+let chooseProducts1 = []
+choose.push(chooseProducts1)
+let chooseProducts2 = []
+choose.push(chooseProducts2)
+let chooseProducts3 = []
+choose.push(chooseProducts3)
+
+let chooseProductCards1 = []
+chooseProducts1.push(chooseProductCards1)
+let chooseProductCards2 = []
+chooseProducts1.push(chooseProductCards2)
+let chooseProductCards3 = []
+chooseProducts1.push(chooseProductCards3)
+
+let chooseProductCards4 = []
+chooseProducts2.push(chooseProductCards4)
+let chooseProductCards5 = []
+chooseProducts2.push(chooseProductCards5)
+let chooseProductCards6 = []
+chooseProducts2.push(chooseProductCards6)
+
+let chooseProductCards7 = []
+chooseProducts3.push(chooseProductCards7)
+let chooseProductCards8 = []
+chooseProducts3.push(chooseProductCards8)
+let chooseProductCards9 = []
+chooseProducts3.push(chooseProductCards9)
+
+let chooseProductCard1 = new Product(
+    'Скорость',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard1)
+let chooseProductCard2 = new Product(
+    'Плотность',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard2)
+let chooseProductCard3 = new Product(
+    'Сила тяжести',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard3)
+let chooseProductCard4 = new Product(
+    'Сила упругости',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard4)
+let chooseProductCard5 = new Product(
+    'Вес тела',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard5)
+let chooseProductCard6 = new Product(
+    'Давление в твердых телах',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard6)
+let chooseProductCard7 = new Product(
+    'Давление в жидкости (газе)',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard7)
+let chooseProductCard8 = new Product(
+    'Архимедова сила',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard8)
+let chooseProductCard9 = new Product(
+    'Сила трения',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard9)
+let chooseProductCard10 = new Product(
+    'Механическая работа',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard10)
+let chooseProductCard11 = new Product(
+    'Мощность',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard11)
+let chooseProductCard12 = new Product(
+    'Кинетическая энергия',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard12)
+let chooseProductCard13 = new Product(
+    'Потенциальная энергия',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard13)
+let chooseProductCard14 = new Product(
+    'Потенциальная энергия',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard14)
+let chooseProductCard15 = new Product(
+    'Момент силы',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard15)
+let chooseProductCard16 = new Product(
+    'КПД',
+    null,
+    null,
+)
+chooseProductCards1.push(chooseProductCard16)
+
+let chooseProductCard17 = new Product(
+    'Количество теплоты при нагревании',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard17)
+let chooseProductCard18 = new Product(
+    'Количество теплоты при охлаждении',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard18)
+let chooseProductCard19 = new Product(
+    'Теплота сгорания',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard19)
+let chooseProductCard20 = new Product(
+    'Теплота плавления',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard20)
+let chooseProductCard21 = new Product(
+    'Теплота парообразования',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard21)
+let chooseProductCard22 = new Product(
+    'Закон Кулона',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard22)
+let chooseProductCard23 = new Product(
+    'Сила электрического тока',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard23)
+let chooseProductCard24 = new Product(
+    'Сопротивление проводника',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard24)
+let chooseProductCard25 = new Product(
+    'Электрическое напряжение',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard25)
+let chooseProductCard26 = new Product(
+    'Электрическое напряжение',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard26)
+let chooseProductCard27 = new Product(
+    'Последовательное соединение проводников',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard27)
+let chooseProductCard28 = new Product(
+    'Параллельное соединение проводников',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard28)
+let chooseProductCard29 = new Product(
+    'Работа тока',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard29)
+let chooseProductCard30 = new Product(
+    'Мощность тока',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard30)
+let chooseProductCard31 = new Product(
+    'Закон Джоуля-Ленца',
+    null,
+    null,
+)
+chooseProductCards2.push(chooseProductCard31)
