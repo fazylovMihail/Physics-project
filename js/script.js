@@ -4,12 +4,15 @@ class Product{
         name,
         title,
         fontSize,
+        contentFormul,
+
         // classCountGlobal, //Когда тыкаешь на любую из кнопок в в product-card-conteiner
         // classCount //Когда тыкаешь на любую из кнопок в в choose-window
     ){
         this.name = name
         this.title = title
         this.fontSize = fontSize
+        this.contentFormul = contentFormul
         // this.classCountGlobal = classCountGlobal
         // this.classCount = classCount
     }
@@ -21,6 +24,18 @@ class Product{
     }
     DrowProductContentName(){
         return `<div class="choose-window-btn">${this.name}</div>`
+    }
+    DrowProductContentManager(){
+        return ` <div class="header-product-manager">${this.name}</div>
+                    <div class="issued-content">
+                        <div class="issued-content-H">M=Fl</div>
+                        <div class="issued-content-content">
+                            <ul class="issued-content-ul">
+                                <li>${this.contentFormul}</li>
+                                <li>м:с</li>
+                            </ul>
+                        </div>
+                    </div>`
     }
 }
 
@@ -191,26 +206,19 @@ imgLocator.addEventListener('mouseout',()=>{
 
 // Выбор блока
 let productWindowChooseBtn = document.querySelectorAll('.choose-btn')
-// Выбор формулы
-let productWindowBtn = document.querySelectorAll('.choose-window-btn')
-// Контрейнер для выбора формулы
 let chooseWindow = document.querySelector('.choose-window')
+// Список в issued-content-content
+let issuedContentUl = document.querySelector('.issued-content-ul')
+// Сохранить выбраннй класс в product-choose
+let chooseCount = null
 
 let productWindowNameContent = [
     ['Скорость','Плотность','Сила тяжести','Сила упругости','Вес тела','Давление в твердых телах','Давление в жидкости (газе)','Архимедова сила','Сила трения','Механическая работа','Мощность','Кинетическая энергия','Потенциальная энергия','Момент силы','КПД']
     ['Количество теплоты при нагревании','Количество теплоты при охлаждении','Теплота сгорания','Теплота плавления','Теплота парообразования','Закон Кулона','Сила электрического тока','Сопротивление проводника','Электрическое напряжение','Последовательное соединение проводников','Параллельное соединение проводников','Работа тока','Мощность тока','Закон Джоуля-Ленца']
 ]
-
-for(let i = 0;i<productWindowChooseBtn.length;i++){
-    productWindowChooseBtn[i].addEventListener('click',()=>{
-        for(let g=0;g<choose[productCount][i].length;g++){
-            chooseWindow.innerHTML = null
-            setTimeout(()=>{
-                chooseWindow.innerHTML += choose[productCount][i][g].DrowProductContentName()
-            },0.3)
-        }
-    })
-}
+let productWindowContent = [
+    ['v=s:t','ρ=m:V','Fтяж=mg','Fупр=k∆l','P=mg','p=F:S','p=ρgh','FA=тgVпч','Fтр=μP','A=Fs','N=A:t','Ek=mv2:2','Eп=mgh','M=Fl','=Aп:Aз*100%']
+]
 
 let choose = []
 
@@ -246,98 +254,107 @@ let chooseProductCard1 = new Product(
     'Скорость',
     null,
     null,
+    'v=s:t'
 )
 chooseProductCards1.push(chooseProductCard1)
 let chooseProductCard2 = new Product(
     'Плотность',
     null,
     null,
+    'ρ=m:V'
 )
 chooseProductCards1.push(chooseProductCard2)
 let chooseProductCard3 = new Product(
     'Сила тяжести',
     null,
     null,
+    'Fтяж=mg'
 )
 chooseProductCards1.push(chooseProductCard3)
 let chooseProductCard4 = new Product(
     'Сила упругости',
     null,
     null,
+    'Fупр=k∆l'
 )
 chooseProductCards1.push(chooseProductCard4)
 let chooseProductCard5 = new Product(
     'Вес тела',
     null,
     null,
+    'P=mg'
 )
 chooseProductCards1.push(chooseProductCard5)
 let chooseProductCard6 = new Product(
     'Давление в твердых телах',
     null,
     null,
+    'p=F:S'
 )
 chooseProductCards1.push(chooseProductCard6)
 let chooseProductCard7 = new Product(
     'Давление в жидкости (газе)',
     null,
     null,
+    'p=ρgh'
 )
 chooseProductCards1.push(chooseProductCard7)
 let chooseProductCard8 = new Product(
     'Архимедова сила',
     null,
     null,
+    'FA=тgVпч'
 )
 chooseProductCards1.push(chooseProductCard8)
 let chooseProductCard9 = new Product(
     'Сила трения',
     null,
     null,
+    'Fтр=μP'
 )
 chooseProductCards1.push(chooseProductCard9)
 let chooseProductCard10 = new Product(
     'Механическая работа',
     null,
     null,
+    'A=Fs'
 )
 chooseProductCards1.push(chooseProductCard10)
 let chooseProductCard11 = new Product(
     'Мощность',
     null,
     null,
+    'N=A:t'
 )
 chooseProductCards1.push(chooseProductCard11)
 let chooseProductCard12 = new Product(
     'Кинетическая энергия',
     null,
     null,
+    'Ek=mv2:2'
 )
 chooseProductCards1.push(chooseProductCard12)
 let chooseProductCard13 = new Product(
     'Потенциальная энергия',
     null,
     null,
+    'Eп=mgh'
 )
 chooseProductCards1.push(chooseProductCard13)
 let chooseProductCard14 = new Product(
-    'Потенциальная энергия',
-    null,
-    null,
-)
-chooseProductCards1.push(chooseProductCard14)
-let chooseProductCard15 = new Product(
     'Момент силы',
     null,
     null,
+    'M=Fl'
 )
-chooseProductCards1.push(chooseProductCard15)
-let chooseProductCard16 = new Product(
+chooseProductCards1.push(chooseProductCard14)
+let chooseProductCard15 = new Product(
     'КПД',
     null,
     null,
+    '=Aп:Aз*100%'
 )
-chooseProductCards1.push(chooseProductCard16)
+chooseProductCards1.push(chooseProductCard15)
 
 let chooseProductCard17 = new Product(
     'Количество теплоты при нагревании',
@@ -429,3 +446,31 @@ let chooseProductCard31 = new Product(
     null,
 )
 chooseProductCards2.push(chooseProductCard31)
+
+let chooseCount2 = null
+
+for(let i = 0;i<productWindowChooseBtn.length;i++){
+    productWindowChooseBtn[i].addEventListener('click',()=>{
+        chooseCount2 = i
+        for(let g=0;g<choose[productCount][i].length;g++){
+            chooseCount = g
+            chooseWindow.innerHTML = null
+            setTimeout(()=>{
+                chooseWindow.innerHTML += choose[productCount][i][g].DrowProductContentName()
+                // Кнопки выбора формул
+                let chooseWindowBtn = document.querySelectorAll('.choose-window-btn')
+
+                for(let u = 0;u<choose[productCount][i].length;u++){
+                    chooseWindowBtn[u].addEventListener('click',()=>{
+                        console.log('click')
+                        // issuedContentUl.innerHTML = null
+                        setTimeout(()=>{
+                            chooseWindow.innerHTML += choose[productCount][i][u].DrowProductContentManager()
+                        },0.3)
+                    })
+                }
+            },0.3)
+        }
+        console.log(chooseCount)
+    })
+}
