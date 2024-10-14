@@ -5,7 +5,7 @@ class Product{
         title,
         fontSize,
         contentFormul,
-
+        contentMeasure
         // classCountGlobal, //Когда тыкаешь на любую из кнопок в в product-card-conteiner
         // classCount //Когда тыкаешь на любую из кнопок в в choose-window
     ){
@@ -13,6 +13,7 @@ class Product{
         this.title = title
         this.fontSize = fontSize
         this.contentFormul = contentFormul
+        this.contentMeasure = contentMeasure
         // this.classCountGlobal = classCountGlobal
         // this.classCount = classCount
     }
@@ -27,15 +28,14 @@ class Product{
     }
     DrowProductContentManager(){
         return ` <div class="header-product-manager">${this.name}</div>
+                    <div class="vertical-band"></div>
                     <div class="issued-content">
-                        <div class="issued-content-H">M=Fl</div>
-                        <div class="issued-content-content">
-                            <ul class="issued-content-ul">
-                                <li>${this.contentFormul}</li>
-                                <li>м:с</li>
-                            </ul>
-                        </div>
-                    </div>`
+                        <ul class="issued-content-ul">
+                            <li>${'Формула: ' + this.contentFormul}</li>
+                            <li>${'Единица измерения: ' + this.contentMeasure}</li>
+                        </ul>
+                    </div>
+                </div>`
     }
 }
 
@@ -254,105 +254,120 @@ let chooseProductCard1 = new Product(
     'Скорость',
     null,
     null,
-    'v=s:t'
+    'v=s:t',
+    'м/с'
 )
 chooseProductCards1.push(chooseProductCard1)
 let chooseProductCard2 = new Product(
     'Плотность',
     null,
     null,
-    'ρ=m:V'
+    'ρ=m:V',
+    'кг/м<sup>3</sup>'
 )
 chooseProductCards1.push(chooseProductCard2)
 let chooseProductCard3 = new Product(
     'Сила тяжести',
     null,
     null,
-    'Fтяж=mg'
+    'Fтяж=mg',
+    'Н'
 )
 chooseProductCards1.push(chooseProductCard3)
 let chooseProductCard4 = new Product(
     'Сила упругости',
     null,
     null,
-    'Fупр=k∆l'
+    'Fупр=k∆l',
+    'Н'
 )
 chooseProductCards1.push(chooseProductCard4)
 let chooseProductCard5 = new Product(
     'Вес тела',
     null,
     null,
-    'P=mg'
+    'P=mg',
+    'Н'
 )
 chooseProductCards1.push(chooseProductCard5)
 let chooseProductCard6 = new Product(
     'Давление в твердых телах',
     null,
     null,
-    'p=F:S'
+    'p=F:S',
+    'Па'
 )
 chooseProductCards1.push(chooseProductCard6)
 let chooseProductCard7 = new Product(
     'Давление в жидкости (газе)',
     null,
     null,
-    'p=ρgh'
+    'p=ρgh',
+    'Па'
 )
 chooseProductCards1.push(chooseProductCard7)
 let chooseProductCard8 = new Product(
     'Архимедова сила',
     null,
     null,
-    'FA=тgVпч'
+    'FA=тgVпч',
+    'Н'
 )
 chooseProductCards1.push(chooseProductCard8)
 let chooseProductCard9 = new Product(
     'Сила трения',
     null,
     null,
-    'Fтр=μP'
+    'Fтр=μP',
+    'Н'
 )
 chooseProductCards1.push(chooseProductCard9)
 let chooseProductCard10 = new Product(
     'Механическая работа',
     null,
     null,
-    'A=Fs'
+    'A=Fs',
+    'Дж'
 )
 chooseProductCards1.push(chooseProductCard10)
 let chooseProductCard11 = new Product(
     'Мощность',
     null,
     null,
-    'N=A:t'
+    'N=A:t',
+    'Вт'
 )
 chooseProductCards1.push(chooseProductCard11)
 let chooseProductCard12 = new Product(
     'Кинетическая энергия',
     null,
     null,
-    'Ek=mv2:2'
+    'Ek=mv2:2',
+    'Дж'
 )
 chooseProductCards1.push(chooseProductCard12)
 let chooseProductCard13 = new Product(
     'Потенциальная энергия',
     null,
     null,
-    'Eп=mgh'
+    'Eп=mgh',
+    'Дж'
 )
 chooseProductCards1.push(chooseProductCard13)
 let chooseProductCard14 = new Product(
     'Момент силы',
     null,
     null,
-    'M=Fl'
+    'M=Fl',
+    'Н*м'
 )
 chooseProductCards1.push(chooseProductCard14)
 let chooseProductCard15 = new Product(
     'КПД',
     null,
     null,
-    '=Aп:Aз*100%'
+    '=Aп:Aз*100%',
+    '%'
 )
 chooseProductCards1.push(chooseProductCard15)
 
@@ -360,94 +375,124 @@ let chooseProductCard17 = new Product(
     'Количество теплоты при нагревании',
     null,
     null,
+    'Q = cm∆t = cm(t2-t1)',
+    'Дж'
 )
 chooseProductCards2.push(chooseProductCard17)
 let chooseProductCard18 = new Product(
     'Количество теплоты при охлаждении',
     null,
     null,
+    'Q = cm∆t = cm(t2-t1)',
+    'Дж'
 )
 chooseProductCards2.push(chooseProductCard18)
 let chooseProductCard19 = new Product(
     'Теплота сгорания',
     null,
     null,
+    'Q=qm',
+    'Дж'
 )
 chooseProductCards2.push(chooseProductCard19)
 let chooseProductCard20 = new Product(
     'Теплота плавления',
     null,
     null,
+    'Q=λm',
+    'Дж'
 )
 chooseProductCards2.push(chooseProductCard20)
 let chooseProductCard21 = new Product(
     'Теплота парообразования',
     null,
     null,
+    'Q=Lm',
+    'Дж'
 )
 chooseProductCards2.push(chooseProductCard21)
 let chooseProductCard22 = new Product(
     'Закон Кулона',
     null,
     null,
+    'F=k(|q1|*|q2|)/r2',
+    'Н'
 )
 chooseProductCards2.push(chooseProductCard22)
 let chooseProductCard23 = new Product(
     'Сила электрического тока',
     null,
     null,
+    'I=g/t или I=U/R',
+    'A'
 )
 chooseProductCards2.push(chooseProductCard23)
 let chooseProductCard24 = new Product(
     'Сопротивление проводника',
     null,
     null,
+    'R=ρ*l/s',
+    'Ом'
 )
 chooseProductCards2.push(chooseProductCard24)
 let chooseProductCard25 = new Product(
     'Электрическое напряжение',
     null,
     null,
+    'U=A/q',
+    'В'
 )
 chooseProductCards2.push(chooseProductCard25)
 let chooseProductCard26 = new Product(
     'Электрическое напряжение',
     null,
     null,
+    'U=A/q',
+    'В'
 )
 chooseProductCards2.push(chooseProductCard26)
 let chooseProductCard27 = new Product(
     'Последовательное соединение проводников',
     null,
     null,
+    'Iобщ=I1=I2=…=InRобщ=R1+R2+…+RnUобщ=U1+U2+…+Un'
 )
 chooseProductCards2.push(chooseProductCard27)
 let chooseProductCard28 = new Product(
     'Параллельное соединение проводников',
     null,
     null,
+    'Iобщ=I1+I2+…+In1Rобщ=1R1+1R2+…+1RnUобщ=U1=U2=…=Un',
+
 )
 chooseProductCards2.push(chooseProductCard28)
 let chooseProductCard29 = new Product(
     'Работа тока',
     null,
     null,
+    'A=Uq=UIt=I<sup>2</sup>Rt=(U<sup>2</sup>/R)t',
+    'Дж'
 )
 chooseProductCards2.push(chooseProductCard29)
 let chooseProductCard30 = new Product(
     'Мощность тока',
     null,
     null,
+    'P=A/t=UI=I<sup>2</sup>R=U<sup>2</sup>/R',
+    'Вт'
 )
 chooseProductCards2.push(chooseProductCard30)
 let chooseProductCard31 = new Product(
     'Закон Джоуля-Ленца',
     null,
     null,
+    'Q=UIt=I<sup>2</sup>Rt=(U<sup>2</sup>/R)t',
+    'Дж'
 )
 chooseProductCards2.push(chooseProductCard31)
 
 let chooseCount2 = null
+let productManager = document.querySelector('.product-manager')
 
 for(let i = 0;i<productWindowChooseBtn.length;i++){
     productWindowChooseBtn[i].addEventListener('click',()=>{
@@ -463,9 +508,9 @@ for(let i = 0;i<productWindowChooseBtn.length;i++){
                 for(let u = 0;u<choose[productCount][i].length;u++){
                     chooseWindowBtn[u].addEventListener('click',()=>{
                         console.log('click')
-                        // issuedContentUl.innerHTML = null
+                        productManager.innerHTML = null
                         setTimeout(()=>{
-                            chooseWindow.innerHTML += choose[productCount][i][u].DrowProductContentManager()
+                            productManager.innerHTML += choose[productCount][i][u].DrowProductContentManager()
                         },0.3)
                     })
                 }

@@ -566,6 +566,8 @@ main{
     background-color: #000;
     border-radius: 0.8vw;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10vw;
     justify-content: center;
     align-items: center;
     color:#c9c9c9;
@@ -580,45 +582,35 @@ main{
     transition-duration: 0.3s;
 }
 .header-product-manager{
-    width: 50%;
-    position: relative;
-    top: 0;
+    max-width: 50%;
     font-size: 2vw;
     height: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.vertical-band{
+    border: 1px solid #c9c9c9;
+    height: 20vw;
+}
 .issued-content{
-    width: 100%;
-    position: relative;
-    height: 25vw;
+    max-width: 40%;
+    min-height: 1vw;
     display: flex;
     justify-content: center;
-    border-left: 1px solid #fff;
-}
-.issued-content-H{
-    /* border: 1px solid rgb(255, 0, 0); */
-    position: absolute;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5vw;
-}
-.issued-content-content{
-    /* border: 1px solid rgb(255, 0, 0); */
-    position: absolute;
-    width: 100%;
-    height: 49.8vh;
-    display: flex;
-    justify-content: left;
-    align-items: center;
     font-size: 1.2vw;
 }
 .issued-content-ul{
-    margin-left: 2.5vw;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 1vw;
+}
+li{
+    text-align: left;
+    word-break: break-all;
 }
 .header-arguments{
     height: 5vw;
