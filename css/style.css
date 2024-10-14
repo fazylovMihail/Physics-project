@@ -567,7 +567,7 @@ main{
     border-radius: 0.8vw;
     display: flex;
     flex-wrap: wrap;
-    gap: 10vw;
+    gap: 8vw;
     justify-content: center;
     align-items: center;
     color:#c9c9c9;
@@ -582,12 +582,12 @@ main{
     transition-duration: 0.3s;
 }
 .header-product-manager{
-    max-width: 50%;
+    max-width: 25%;
     font-size: 2vw;
-    height: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    word-break:normal;
 }
 .vertical-band{
     border: 1px solid #c9c9c9;
