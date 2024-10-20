@@ -44,19 +44,19 @@ let cards=[]
 let card1 = new Product(
     '7-9',
     '7-9 класс',
-    "2.5vw"
+    "48px"
 )
 cards.push(card1)
 let card2 = new Product(
     '10-11',
     '10-11 класс',
-    '2.5vw'
+    '48px'
 )
 cards.push(card2)
 let card3 = new Product(
     'Величины',
     'Обозначения величин',
-    '2vw'
+    '38.4px'
 )
 cards.push(card3)
 
@@ -157,52 +157,52 @@ function OpenIconHrefWindow(){
     window.scrollTo(0,0)
 }
 
-let imgBackgroundMassive = document.querySelectorAll('.img-background')
-let imgLocator = document.querySelector('.img-locator')
-let activeAnim = false
+// let imgBackgroundMassive = document.querySelectorAll('.img-background')
+// let imgLocator = document.querySelector('.img-locator')
+// let activeAnim = false
 
-imgLocator.addEventListener('mouseenter',()=>{
-    anime({
-        duration:1500,
-        targets:imgBackgroundMassive[0],
-        marginRight:'20vw',
-        loop:false
-    })
-    anime({
-        duration:1500,
-        targets:imgBackgroundMassive[1],
-        marginLeft:'20vw',
-        loop:false
-    })
-    anime({
-        duration:200,
-        targets:'.welcome-text',
-        opacity:1,
-        loop:false,
-        easing:'linear'
-    })
-})
-imgLocator.addEventListener('mouseout',()=>{
-    anime({
-        targets:imgBackgroundMassive[0],
-        marginRight:'0vw',
-        duration:1500,
-        loop:false
-    })
-    anime({
-        targets:imgBackgroundMassive[1],
-        marginLeft:'0vw',
-        duration:1500,
-        loop:false
-    })
-    anime({
-        duration:300,
-        targets:'.welcome-text',
-        opacity:0,
-        loop:false,
-        easing:'linear'
-    })
-})
+// imgLocator.addEventListener('mouseenter',()=>{
+//     anime({
+//         duration:1500,
+//         targets:imgBackgroundMassive[0],
+//         marginRight:'20vw',
+//         loop:false
+//     })
+//     anime({
+//         duration:1500,
+//         targets:imgBackgroundMassive[1],
+//         marginLeft:'20vw',
+//         loop:false
+//     })
+//     anime({
+//         duration:200,
+//         targets:'.welcome-text',
+//         opacity:1,
+//         loop:false,
+//         easing:'linear'
+//     })
+// })
+// imgLocator.addEventListener('mouseout',()=>{
+//     anime({
+//         targets:imgBackgroundMassive[0],
+//         marginRight:'0vw',
+//         duration:1500,
+//         loop:false
+//     })
+//     anime({
+//         targets:imgBackgroundMassive[1],
+//         marginLeft:'0vw',
+//         duration:1500,
+//         loop:false
+//     })
+//     anime({
+//         duration:300,
+//         targets:'.welcome-text',
+//         opacity:0,
+//         loop:false,
+//         easing:'linear'
+//     })
+// })
 
 // Выбор блока
 let productWindowChooseBtn = document.querySelectorAll('.choose-btn')
