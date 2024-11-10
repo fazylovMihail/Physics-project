@@ -1,1 +1,72 @@
 @import url(style.css);
+
+@media screen and (max-width:1360px) {
+    .content-header{
+        flex-direction: column;
+        gap:38px;
+    }
+    .header-btn-conteiner{
+        order: 1;
+    }
+    .header-wrapper{
+        width: 938px;
+        height: 227px;
+        order: 2;
+    }
+    .header-btn{
+        height: 227px;
+        font-size: 36px;
+    }
+    .wrapper-smile{
+        bottom: 20px;
+    }
+    .header-wrapper-downoald-btn{
+        width: 416px;
+        height: 100px;
+    }
+}
+@media screen and (max-width:700px) {
+    header{
+        height: 130vh;
+    }
+    .content-header{
+        flex-direction: column;
+        gap:38px;
+    }
+    .header-btn-conteiner{
+        order: 1;
+        width: 255px;
+        height: 795.02px;
+        gap: 0px;
+    }
+    .header-wrapper{
+        width: 250px;
+        height: 239.4px;
+        order: 2;
+    }
+    .header-btn{
+        font-size: 36px;
+    }
+    .header-btn1{
+        grid-column: span 3;
+        flex-direction: column;
+        gap:20px;
+    }
+    .header-btn2{
+        grid-column: span 3;
+    }
+    .header-btn3{
+        grid-column: span 3;
+    }
+    .wrapper-smile{
+        bottom: 20px;
+    }
+    .header-wrapper-downoald-btn{
+        width: 197px;
+        height: 70px;
+        font-size: 16px;
+    }
+    .header-text{
+        font-size: 24px;
+    }
+}
