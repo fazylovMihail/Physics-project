@@ -24,10 +24,14 @@
         width: 416px;
         height: 100px;
     }
+    .content-text-conteiner{
+        font-size: 135px;
+    }
 }
 @media screen and (max-width:700px) {
     header{
-        height: 130vh;
+        max-height: 180vh;
+        padding: 50px 0;
     }
     .content-header{
         flex-direction: column;
@@ -68,5 +72,16 @@
     }
     .header-text{
         font-size: 24px;
+    }
+    .content-text-conteiner{
+        font-size: 84px;
+    }
+    .circle-btn-conteiner{
+        width: 350px;
+        bottom: 5px;
+    }
+    .circle-btn{
+        width: 40px;
+        height: 40px;
     }
 }
