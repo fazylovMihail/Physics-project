@@ -6,7 +6,7 @@ body{
     width: 100%;
     height: 100vh;
     position: relative;
-    overflow-x: hidden;
+        overflow-x: hidden;
 }
 header{
     width: 100%;
@@ -15,8 +15,6 @@ header{
     justify-content: center;
     align-items: center;
     background-color: #041B80;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
 }
 .content-header{
     /* width: 80%; */
@@ -175,6 +173,11 @@ main{
     height: 50px;
     border-radius: 50px;
     cursor: pointer;
+    transition: 0.2s;
+}
+.circle-btn:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
 }
 .select-btn-content{
     background-color: #000;
