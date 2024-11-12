@@ -1,6 +1,6 @@
 function SendEmail(){
     let params = {
-        support: document.getElementById('support').value
+        support: document.querySelector('#support').value
     }
     const serviceId = 'service_j5dbakp'
     const templateId = 'template_rcckypp'
@@ -8,7 +8,7 @@ function SendEmail(){
     emailjs
         .send(serviceId,templateId,params)
         .then((res)=>{
-            document.getElementById('support').value = ''
+            document.querySelector('#support').value = ''
             console.log(res)
             alert('Ваше сообщение отправлено')
         })

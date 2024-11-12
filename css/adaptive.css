@@ -27,6 +27,12 @@
     .content-text-conteiner{
         font-size: 135px;
     }
+    .form-text{
+        font-size: 72px;
+    }
+    .support-input{
+        width: 582px;
+    }
 }
 @media screen and (max-width:700px) {
     header{
@@ -79,9 +85,29 @@
     .circle-btn-conteiner{
         width: 350px;
         bottom: 5px;
+        gap: 50px;
     }
     .circle-btn{
         width: 40px;
         height: 40px;
+    }
+    .form-text{
+        font-size: 36px;
+    }
+    .support-form{
+        height: 537px;
+    }
+    .support-input{
+        width: 230px;
+        height: 50px;
+        font-size: 30px;
+        font-size: 20px;
+        padding-left: 13px;
+    }
+    .submit-btn{
+        width: 121px;
+        height: 50px;
+        font-size: 14px;
+        border: 2px solid #fff;
     }
 }
