@@ -15,8 +15,9 @@
             </div>
             <div class="header-btn-conteiner">
                 <div class="header-btn header-btn1">
-                    <div class="search-btn">Продукты</div>
-                    <div class="search-btn">Помощь</div>
+                    <div class="search-btn" onclick="document.querySelector('#content-wrapper').scrollIntoView({ behavior: 'smooth' });">Продукты</div>
+                    <div class="search-btn" onclick="document.querySelector('#support-wrapper').scrollIntoView({ behavior: 'smooth' });">Помощь</div>
+                    <div class="search-btn" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Тренажёр</div>
                 </div>
                 <div class="selects header-btn header-btn2">PhysDream</div>
                 <div class="selects header-btn header-btn3">Скачать приложение</div>
@@ -24,7 +25,7 @@
         </div>
     </header>
     <main>
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="content-wrapper">
             <div class="content-text-conteiner"></div>
             <div class="circle-btn-conteiner">
                 <div class="circle-btn"></div>
@@ -32,14 +33,14 @@
                 <div class="circle-btn"></div>
             </div>
         </div>
-        <div class="support-wrapper">
+        <div class="support-wrapper" id="support-wrapper">
             <form class="support-form" id="support" action="">
                 <div class="form-text">Есть вопросы?</div>
                 <input class="support-input" type="text" placeholder="Пиши сюда">
                 <input class="submit-btn" type="submit">
             </form>
         </div>
-        <div class="trainer-wrapper">
+        <div class="trainer-wrapper" id="trainer-wrapper">
             <div class="trainer-conteiner start-trainer">
                 <div class="h-start-trainer">Проверь, как хорошо ты знаком с формулами по физике:)</div>
                 <div class="start-trainer-btn">Начать</div>
