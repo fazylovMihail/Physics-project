@@ -110,4 +110,12 @@
         font-size: 14px;
         border: 2px solid #fff;
     }
+    .h-start-trainer{
+        font-size: 30px;
+    }
+    .start-trainer-btn{
+        width: 270px;
+        height: 140px;
+        font-size: 48px;
+    }
 }

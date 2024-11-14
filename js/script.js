@@ -5,6 +5,10 @@ const headerWrapperSelector = '.header-wrapper';
 const contentTextConteinerSelector = '.content-text-conteiner';
 const circleBtnSelector = '.circle-btn';
 const selectClassContent = 'select-btn-content';
+const trainerWrapperSelector = '.trainer-wrapper';
+const startTrainerSelector = '.start-trainer';
+const startTrainerBtnSelector = '.start-trainer-btn';
+const midleTrainerSelector = '.midle-trainer';
 
 // переменные
 const headerSelectsBtn = document.querySelectorAll(selectsBtnSelector);
@@ -82,3 +86,29 @@ for(let i = 0;i<circleBtn.length;i++){
         SelectManagerContent(circleBtn[i], i, selectClassContent);
     })
 }
+
+// блок с кодом для работы trainer-wrapper
+const trainerWrapper = document.querySelector(trainerWrapperSelector);
+const startTrainer = document.querySelector(startTrainerSelector);
+const startTrainerBtn = document.querySelector(startTrainerBtnSelector);
+const midleTrainer = document.querySelector(midleTrainerSelector);
+
+class Trainer{
+    constructor(
+        name,
+    ){
+        this.name = name;
+   }
+    DrowMidleTrainer(){
+        return `<div class="trainer-conteiner midle-trainer">
+                <div class="h-start-trainer">Найди формулу плотности</div>
+                <div class="midle-btn-conteiner">${this.name}</div>
+            </div>`
+   }
+}
+
+let testTrainer = new Trainer('имя');
+
+startTrainerBtn.addEventListener('click', ()=>{
+    trainerWrapper.innerHTML = testTrainer.DrowMidleTrainer();
+})

@@ -241,3 +241,74 @@ main{
     border: none;
     transition: 0.3s;
 }
+.trainer-wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trainer-conteiner{
+    width: 85%;
+    height: 70%;
+    font-size: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 166px;
+}
+.start-trainer{
+    display: flex;
+}
+.h-start-trainer{
+    text-align: center;
+}
+.start-trainer-btn{
+    width: 600px;
+    height: 200px;
+    background-color: #041B80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 25px;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.start-trainer-btn:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+.start-trainer-btn:active{
+    transform: scale(1);
+    transition: 0.3s;
+}
+.midle-btn-conteiner{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+.midle-btn{
+    width: 300px;
+    height: 300px;
+    border: 3px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    border-radius: 15px;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.midle-btn:hover{
+    background-color: #041B80;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+}
