@@ -87,28 +87,14 @@ for(let i = 0;i<circleBtn.length;i++){
     })
 }
 
-// блок с кодом для работы trainer-wrapper
-const trainerWrapper = document.querySelector(trainerWrapperSelector);
-const startTrainer = document.querySelector(startTrainerSelector);
-const startTrainerBtn = document.querySelector(startTrainerBtnSelector);
-const midleTrainer = document.querySelector(midleTrainerSelector);
+// const scrollElementsSelector = '.scroll-element';
 
-class Trainer{
-    constructor(
-        name,
-    ){
-        this.name = name;
-   }
-    DrowMidleTrainer(){
-        return `<div class="trainer-conteiner midle-trainer">
-                <div class="h-start-trainer">Найди формулу плотности</div>
-                <div class="midle-btn-conteiner">${this.name}</div>
-            </div>`
-   }
-}
+// const scrollElements = document.querySelectorAll(scrollElementsSelector);
 
-let testTrainer = new Trainer('имя');
-
-startTrainerBtn.addEventListener('click', ()=>{
-    trainerWrapper.innerHTML = testTrainer.DrowMidleTrainer();
-})
+// window.addEventListener('scroll',()=>{
+//     for(let i = 0;i<scrollElements.length;i++){
+//         scrollElements[i].scrollIntoView({
+//             behavior: 'smooth'
+//         });
+//     }
+// })

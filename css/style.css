@@ -6,7 +6,7 @@ body{
     width: 100%;
     height: 100vh;
     position: relative;
-        overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 header{
@@ -83,7 +83,7 @@ header{
     font-size: 45px;
     transition: 0.3s;
     user-select: none;
-    border: 3px solid #fff;
+    border: 1px solid #fff;
     background-color: none;
     color:#fff;
 }
@@ -199,12 +199,13 @@ main{
     width: 82%;
     height: 726px;
     max-height: 726px;
-    border: 3px solid #fff;
+    border: 2px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 29px;
+    border-radius: 15px;
 }
 .form-text{
     color: #fff;
@@ -311,4 +312,106 @@ main{
     color: #fff;
     border: none;
     transition: 0.3s;
+}
+footer{
+    background-color: #041B80;
+    border: 1px solid white;
+    width: 100%;
+    min-height: 55vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-content-conteiner{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-flow: dense;
+    gap: 24px;
+    width: 60%;
+    min-height: 424px;
+    justify-content: center;
+}
+.footer-content{
+    height: 200px;
+    border-radius: 15px;
+}
+.footer-content1{
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 68px;
+    font-size: 38px;
+    border: 1px solid #fff;
+}
+.footer-content2{
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    background-color: #fff;
+    color: #000;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.footer-content2:hover{
+    transform: scale(1.02);
+    transition: 0.15s;
+}
+.footer-content2:active{
+    transform: scale(1);
+    transition: 0.15s;
+}
+.footer-content3{
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+}
+.social-btn-conteiner{
+    display: flex;
+    flex-direction: row;
+    gap: 84px;
+}
+.social-btn{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.social-btn:hover{
+    transform: scale(1.1);
+    transition: 0.15s;
+}
+.social-btn:active{
+    transform: scale(1);
+    transition: 0.15s;
+}
+.footer-img{
+    width: 100%;
+    height: 100%;
+}
+.footer-tag-btn{
+    cursor: pointer;
+    user-select: none;
+    transition: 0.05s;
+    position: relative;
+}
+.footer-tag-btn::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border: 0px solid #fff;
+    width: 0%;
+    transition: 0.3s;
+}
+.footer-tag-btn:hover::after{
+    transition: 0.3s;
+    border: 1px solid #fff;
+    width: 100%;
 }

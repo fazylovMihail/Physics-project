@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header class="scroll-element">
         <div class="content-header">
             <div class="header-wrapper">
                 <div class="header-wrapper-text-conteiner"></div>
@@ -25,7 +25,7 @@
         </div>
     </header>
     <main>
-        <div class="content-wrapper" id="content-wrapper">
+        <div class="content-wrapper scroll-element" id="content-wrapper">
             <div class="content-text-conteiner"></div>
             <div class="circle-btn-conteiner">
                 <div class="circle-btn"></div>
@@ -33,20 +33,36 @@
                 <div class="circle-btn"></div>
             </div>
         </div>
-        <div class="support-wrapper" id="support-wrapper">
+        <div class="support-wrapper scroll-element" id="support-wrapper">
             <form class="support-form" id="support" action="">
                 <div class="form-text">Есть вопросы?</div>
                 <input class="support-input" type="text" placeholder="Пиши сюда">
                 <input class="submit-btn" type="submit">
             </form>
         </div>
-        <div class="trainer-wrapper" id="trainer-wrapper">
+        <div class="trainer-wrapper scroll-element" id="trainer-wrapper">
             <div class="trainer-conteiner start-trainer">
                 <div class="h-start-trainer">Проверь, как хорошо ты знаком с формулами по физике:)</div>
                 <div class="start-trainer-btn">Начать</div>
             </div>
         </div>
     </main>
+    <footer>
+        <div class="footer-content-conteiner">
+            <div class="footer-content footer-content1">
+                <div class="footer-tag-btn" onclick="document.querySelector('#content-wrapper').scrollIntoView({ behavior: 'smooth' });">Продукты</div>
+                <div class="footer-tag-btn" onclick="document.querySelector('#support-wrapper').scrollIntoView({ behavior: 'smooth' });">Контакты</div>
+                <div class="footer-tag-btn" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Сообщить об ошибке</div>
+            </div>
+            <div class="footer-content footer-content2">Скачать приложение</div>
+            <div class="footer-content footer-content3">
+                <div class="social-btn-conteiner">
+                    <div class="social-btn"><img class="footer-img" src="img/icons8-телеграмма-app (1).svg" alt=""></div>
+                    <div class="social-btn"><img class="footer-img" src="img/icons8-твиттерх (1).svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>
