@@ -1,15 +1,3 @@
-// селекторы, классы и айди
-const selectsBtnSelector = '.selects';
-const selectClassHeader = 'select-btn-header';
-const headerWrapperSelector = '.header-wrapper';
-const contentTextConteinerSelector = '.content-text-conteiner';
-const circleBtnSelector = '.circle-btn';
-const selectClassContent = 'select-btn-content';
-const trainerWrapperSelector = '.trainer-wrapper';
-const startTrainerSelector = '.start-trainer';
-const startTrainerBtnSelector = '.start-trainer-btn';
-const midleTrainerSelector = '.midle-trainer';
-
 // переменные
 const headerSelectsBtn = document.querySelectorAll(selectsBtnSelector);
 const headerWrapper = document.querySelector(headerWrapperSelector);
@@ -48,16 +36,6 @@ for(let i = 0;i<headerSelectsBtn.length;i++){
     })
 }
 
-// переменные
-const contentTextConteiner = document.querySelector(contentTextConteinerSelector);
-const circleBtn = document.querySelectorAll(circleBtnSelector);
-
-const contentText = [
-    '7 класс',
-    '8 класс',
-    '9 класс',
-]
-
 // код для работы контейнера с контентом
 
 function SelectManagerContent(element, index, workClass){
@@ -79,6 +57,36 @@ function SelectManagerContent(element, index, workClass){
     }
     contentTextConteiner.innerHTML = contentText[index];
 }
+
+// работа с продуктом и тренажёром
+
+// переменные
+const contentTextConteiner = document.querySelector(contentTextConteinerSelector);
+const circleBtn = document.querySelectorAll(circleBtnSelector);
+const header = document.querySelector(headerSelector);
+const main = document.querySelector(mainSelector);
+const footer = document.querySelector(footerSelector);
+const body = document.querySelector(bodySelector);
+const headerManager = document.querySelector(headerManagerSelector);
+const managerWrapper = document.querySelector(managerWrapperSelector);
+
+const startWindowArray = [header, main, footer];
+
+const contentText = [
+    '7 класс',
+    '8 класс',
+    '9 класс',
+]
+class Content{
+    constructor(
+        name,
+        formul,
+    ){
+        this.name = name;
+        this.formul = formul;
+    }
+}
+
 SelectManagerContent(circleBtn[0], 0, selectClassContent);
 
 for(let i = 0;i<circleBtn.length;i++){
@@ -87,14 +95,33 @@ for(let i = 0;i<circleBtn.length;i++){
     })
 }
 
-// const scrollElementsSelector = '.scroll-element';
+function WindowManager(ok){
+    if(ok){
+        for(let i = 0;i<startWindowArray.length;i++){
+            startWindowArray[i].style.display = 'none';
+        }
 
-// const scrollElements = document.querySelectorAll(scrollElementsSelector);
+        managerWrapper.style.display = 'block';
+    }
+    else{
+        for(let i = 0;i<startWindowArray.length;i++){
+            startWindowArray[i].style.display = 'flex';
+        }
 
-// window.addEventListener('scroll',()=>{
-//     for(let i = 0;i<scrollElements.length;i++){
-//         scrollElements[i].scrollIntoView({
-//             behavior: 'smooth'
-//         });
-//     }
-// })
+        managerWrapper.style.display = 'none';
+    }
+
+    for(let i = 0;i<circleBtn.length;i++){
+        if(circleBtn[i].classList.contains(selectClassContent)){
+            headerManager.innerHTML = contentText[i];
+            break;
+        }
+    }
+}
+
+contentTextConteiner.addEventListener('click',()=>{
+    WindowManager(true);
+})
+headerManager.addEventListener('click',()=>{
+    WindowManager(false);
+})
