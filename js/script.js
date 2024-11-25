@@ -69,14 +69,22 @@ const footer = document.querySelector(footerSelector);
 const body = document.querySelector(bodySelector);
 const headerManager = document.querySelector(headerManagerSelector);
 const managerWrapper = document.querySelector(managerWrapperSelector);
+const typeBtnConteiner = document.querySelector(typeBtnConteinerSelector);
 
 const startWindowArray = [header, main, footer];
+const classNames = [];
+
+const class7Names = ['Скорость', 'Плотность','Сила тяжести','Сила упругости','Вес тела','Давление в твердых телах','Давление в жидкости/газе','Архимедова сила','Сила трения','Механическая работа','Мощность','Кинетическая энергия','Потенциальная энергия','Момент силы','КПД'];
+classNames.push(class7Names);
+const class8Names = ['Количество теплоты при нагревании','Количество теплоты при охлаждении','Теплота сгорания','Теплота плавления','Теплота парообразования','Закон Кулона','Сила электрического тока','Сопротивление проводника','Электрическое напряжение','Последовательное соединение проводников','Параллельное соединение проводников','Работа тока','Мощность тока','Закон Джоуля-Ленца'];
+classNames.push(class8Names);
 
 const contentText = [
     '7 класс',
     '8 класс',
     '9 класс',
 ]
+
 class Content{
     constructor(
         name,
@@ -84,6 +92,9 @@ class Content{
     ){
         this.name = name;
         this.formul = formul;
+    }
+    DrowTypeBtn(){
+        return `<div class="type-btn">${this.name}</div>`;
     }
 }
 
@@ -110,11 +121,24 @@ function WindowManager(ok){
 
         managerWrapper.style.display = 'none';
     }
+    
+    ContentManager();
+}
 
+let cards = [];
+
+function ContentManager(){
+    typeBtnConteiner.innerHTML = null;
+    
     for(let i = 0;i<circleBtn.length;i++){
         if(circleBtn[i].classList.contains(selectClassContent)){
             headerManager.innerHTML = contentText[i];
-            break;
+            
+            for(let g = 0;g<classNames[i].length;g++){
+                const card = new Content(classNames[i][g]);
+    
+                typeBtnConteiner.innerHTML += card.DrowTypeBtn();
+            }
         }
     }
 }

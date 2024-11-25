@@ -15,3 +15,5 @@ const footerSelector = 'footer';
 const bodySelector = 'body';
 const managerWrapperSelector = '.manager-wrapper';
 const headerManagerSelector = '.header-manager';
+const typeBtnConteinerSelector = '.type-btn-conteiner'
+const typeBtnSelector = '.type-btn';
