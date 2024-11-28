@@ -7,6 +7,7 @@ body{
     height: 100vh;
     position: relative;
     overflow-x: hidden;
+    background-color: #010218;
 }
 
 header{
@@ -15,7 +16,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #041B80;
+    /* background-color: #86062d; */
+    background-image: linear-gradient(-180deg, #86062d 48%, #010218);
 }
 .content-header{
     /* width: 80%; */
@@ -28,7 +30,7 @@ header{
     position: relative;
     width: 575px;
     height: 592px;
-    background-color: #000;
+    background-color: #010218;
     color: #fff;
     display: flex;
     align-items: center;
@@ -149,6 +151,11 @@ main{
     height: 100vh;
     display: flex;
     justify-content: center;
+    background-color: #010218;
+    border-bottom: 3px solid #fff;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    /* #eeecda */
 }
 .content-text-conteiner{
     width: 100%;
@@ -159,7 +166,12 @@ main{
     font-size: 200px;
     cursor: pointer;
     user-select: none;
+    color:#fff;
 }
+/* .content-text-conteiner:active{
+    transition: 0.3s;
+    filter: blur(5px);
+} */
 .circle-btn-conteiner{
     z-index: 1;
     position: absolute;
@@ -173,7 +185,7 @@ main{
     height: 150px;
 }
 .circle-btn{
-    background-color: #041B80;
+    background-color: #fff;
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -185,11 +197,10 @@ main{
     transition: 0.2s;
 }
 .select-btn-content{
-    background-color: #000;
+    background-color: #86062d;
 }
-
 .support-wrapper{
-    background-color: #041B80;
+    background-color: #010218;
     position: relative;
     width: 100%;
     height: 100vh;
@@ -240,7 +251,7 @@ main{
     transition: 0.3s;
 }
 .submit-btn:hover{
-    background-color: #000;
+    background-color: #86062d;
     border: none;
     transition: 0.3s;
 }
@@ -250,6 +261,10 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #010218;
+    border-top: 3px solid #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 .trainer-conteiner{
     width: 85%;
@@ -266,11 +281,13 @@ main{
 }
 .h-start-trainer{
     text-align: center;
+    color: #fff;
 }
 .start-trainer-btn{
     width: 600px;
     height: 200px;
-    background-color: #041B80;
+    background-color: transparent;
+    border: 3px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -281,48 +298,23 @@ main{
     transition: 0.3s;
 }
 .start-trainer-btn:hover{
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-.start-trainer-btn:active{
-    transform: scale(1);
-    transition: 0.3s;
-}
-.midle-btn-conteiner{
-    display: flex;
-    width: 100%;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-    gap: 90px;
-}
-.midle-btn{
-    width: 300px;
-    height: 300px;
-    border: 3px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    border-radius: 15px;
-    user-select: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.midle-btn:hover{
-    background-color: #041B80;
-    color: #fff;
+    background-color: #86062d;
     border: none;
     transition: 0.3s;
 }
+.start-trainer-btn:active{
+    filter: blur(5px);
+    transition: 0.3s;
+}
 footer{
-    background-color: #041B80;
+    background-color: #010218;
     width: 100%;
     min-height: 55vh;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 3px solid #fff;
 }
 .footer-content-conteiner{
     display: grid;
@@ -431,7 +423,7 @@ main{
     display: none;
     width: 100%;
     height: 100vh;
-    background-color: #fff;
+    background-color: #010218;
 }
 .header-manager{
     display: flex;
@@ -439,9 +431,11 @@ main{
     align-items: center;
     width: 100%;
     height: 10vh;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #fff;
+    color: #fff;
     font-size: 52px;
     user-select: none;
+    background-color: #010218;
 }
 .manager{
     background-color: #fff;
@@ -451,6 +445,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 145px;
+    background-color: #010218;
 }
 .type-group{
     display: flex;
@@ -475,18 +470,18 @@ main{
     cursor: pointer;
     user-select: none;
     transition: 0.3s;
-    margin: 50px auto;
+    margin: 100px auto;
 }
 .type-btn:hover{
     transition: 0.3s;
-    background-color: #041B80;
+    background-color: #010218;
     color: #fff;
     border: none;
 }
 .manager-window{
     width: 70%;
     height: 630px;
-    background-color: #041B80;
+    background-color: #86062d;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -510,4 +505,38 @@ main{
     /* outline: 3px solid #000; */
     background-color: #fff;
     height: 400px;
+}
+.content-manager-group{
+    border-top: 3px solid #fff;
+    background-color: #010218;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-manager{
+    border: 2px solid #fff;
+    color: #fff;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 150px;
+}
+.formul-name{
+    font-size: 52px;
+    /* position: absolute;
+    left: 150px; */
+}
+.formul-conteiner{
+    border-left: 1px solid #fff;
+    width: 700px;
+    height: 400px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

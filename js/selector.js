@@ -17,3 +17,5 @@ const managerWrapperSelector = '.manager-wrapper';
 const headerManagerSelector = '.header-manager';
 const typeBtnConteinerSelector = '.type-btn-conteiner'
 const typeBtnSelector = '.type-btn';
+const contentManagerGroupSelector = '.content-manager-group';
+const contentManagerSelector = 'content-manager';
