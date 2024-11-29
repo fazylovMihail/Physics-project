@@ -19,3 +19,5 @@ const typeBtnConteinerSelector = '.type-btn-conteiner'
 const typeBtnSelector = '.type-btn';
 const contentManagerGroupSelector = '.content-manager-group';
 const contentManagerSelector = 'content-manager';
+const topBtnGroupSelector = '.top-btn-group';
+const topBtnSelector = '.top-btn';

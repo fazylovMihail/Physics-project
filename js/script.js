@@ -71,6 +71,7 @@ const headerManager = document.querySelector(headerManagerSelector);
 const managerWrapper = document.querySelector(managerWrapperSelector);
 const typeBtnConteiner = document.querySelector(typeBtnConteinerSelector);
 const contentManagerGroup = document.querySelector(contentManagerGroupSelector);
+const topBtnGroup = document.querySelector(topBtnGroupSelector);
 
 const startWindowArray = [header, main, footer];
 const classNames = [];
@@ -102,12 +103,14 @@ class Content{
         this.formul = formul;
     }
     DrowTypeBtn(){
-        return `<div class="type-btn">${this.name}</div>`;
+        return `<div class="type-btn" onclick="document.querySelector('#content-manager-group').scrollIntoView({ behavior: 'smooth' });">${this.name}</div>`;
     }
     DrowFormulConteiner(){
         return `<div class="content-manager">
-                <div class="formul-name">${this.name}</div>
-                <div class="formul-conteiner">${this.formul}</div>
+                    <div class = "formul-package">
+                        <div class="formul-name">${this.name}</div>
+                        <div class="formul-conteiner">${this.formul}</div>
+                    </div>
             </div>`;
     }
 }
@@ -120,7 +123,15 @@ for(let i = 0;i<circleBtn.length;i++){
     })
 }
 
+function bodyOverflowManager(overParams){
+    body.style = `
+        overflow-y: ${overParams};    
+    `
+}
+
 function WindowManager(ok){
+    bodyOverflowManager('hidden');
+
     if(ok){
         for(let i = 0;i<startWindowArray.length;i++){
             startWindowArray[i].style.display = 'none';
@@ -136,6 +147,8 @@ function WindowManager(ok){
         managerWrapper.style.display = 'none';
 
         document.querySelector('.content-wrapper').scrollIntoView({behavior:"instant"});
+
+        bodyOverflowManager('scroll');
     }
     
     ContentManager();
@@ -162,6 +175,8 @@ function ContentManager(){
 
                 typeBtn[g].addEventListener('click',()=>{                  
                     contentManagerGroup.innerHTML = card.DrowFormulConteiner();
+
+                    bodyOverflowManager('scroll')
                 });
             }
         }
@@ -172,9 +187,86 @@ function ContentManager(){
     // }
 }
 
+// для работы кнопки вверх
+let Visible = function (target) {
+    let ok;
+
+  // Все позиции элемента
+  var targetPosition = {
+        top: window.scrollY + target.getBoundingClientRect().top,
+        left: window.scrollX + target.getBoundingClientRect().left,
+        right: window.scrollX + target.getBoundingClientRect().right,
+        bottom: window.scrollY + target.getBoundingClientRect().bottom
+    },
+    // Получаем позиции окна
+    windowPosition = {
+        top: window.scrollY,
+        left: window.scrollX,
+        right: window.scrollX + document.documentElement.clientWidth,
+        bottom: window.scrollY + document.documentElement.clientHeight
+    };
+
+    if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+        targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+        targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+        targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+
+        ok = true;
+    }
+    else {
+        ok = false;
+    };
+
+    return ok;
+};
+
+const topBtn = document.querySelector(topBtnSelector);
+
+let topBtnRequest = false;
+
+// Запускаем функцию при прокрутке страницы
+window.addEventListener('scroll', function() {
+    let visible = Visible(header);
+
+    const windowWidth = window.innerWidth;
+    // console.log(windowWidth);
+
+    if(windowWidth > 700 && !topBtnRequest){
+        if(visible == true){
+            topBtnGroup.style = `
+                opacity: 0;
+                z-index: -1;
+            `;
+            topBtn.removeEventListener('click', scrollToHeader);
+        }
+        else{
+            topBtnGroup.style = `
+                opacity: 1;
+                z-index: 99;
+            `;
+            topBtn.addEventListener('click', scrollToHeader);
+        }
+    }
+    else{
+        topBtnGroup.style = `
+            opacity: 0;
+            z-index: -1;
+        `;
+        topBtn.removeEventListener('click', scrollToHeader);
+    }
+});
+
 contentTextConteiner.addEventListener('click',()=>{
+    topBtnRequest = true;
+
     WindowManager(true);
 })
 headerManager.addEventListener('click',()=>{
+    topBtnRequest = false;
+    
     WindowManager(false);
 })
+
+function scrollToHeader(){
+    header.scrollIntoView({behavior:"smooth"});
+}

@@ -10,6 +10,34 @@ body{
     background-color: #010218;
 }
 
+.top-btn-group{
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: -1;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+    width: 190px;
+    height: 190px;
+}
+.top-btn{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-img{
+    width: 150px;
+    height: 150px;
+}
 header{
     width: 100%;
     min-height: 100vh;
@@ -37,6 +65,7 @@ header{
     justify-content: center;
     font-size: 35px;
     order:2;
+    border-radius: 15px;
 }
 .header-wrapper-downoald{
     display: flex;
@@ -153,8 +182,8 @@ main{
     justify-content: center;
     background-color: #010218;
     border-bottom: 3px solid #fff;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    /* border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px; */
     /* #eeecda */
 }
 .content-text-conteiner{
@@ -163,7 +192,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 200px;
+    font-size: 180px;
     cursor: pointer;
     user-select: none;
     color:#fff;
@@ -222,13 +251,13 @@ main{
 }
 .form-text{
     color: #fff;
-    font-size: 96px;
+    font-size: 76px;
     user-select: none;
     margin-bottom: 35px;
 }
 .support-input{
     color: #000;
-    width: 1089px;
+    width: 80%;
     height: 90px;
     font-size: 32px;
     padding-left: 40px;
@@ -263,13 +292,13 @@ main{
     align-items: center;
     background-color: #010218;
     border-top: 3px solid #fff;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    /* border-top-left-radius: 50px;
+    border-top-right-radius: 50px; */
 }
 .trainer-conteiner{
     width: 85%;
     height: 70%;
-    font-size: 66px;
+    font-size: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -284,14 +313,13 @@ main{
     color: #fff;
 }
 .start-trainer-btn{
-    width: 600px;
+    width: 500px;
     height: 200px;
-    background-color: transparent;
-    border: 3px solid #fff;
+    background-color: #fff;
+    color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
     border-radius: 25px;
     user-select: none;
     cursor: pointer;
@@ -299,6 +327,7 @@ main{
 }
 .start-trainer-btn:hover{
     background-color: #86062d;
+    color: #fff;
     border: none;
     transition: 0.3s;
 }
@@ -375,6 +404,7 @@ footer{
     height: 100px;
     cursor: pointer;
     transition: 0.15s;
+    user-select: none;
 }
 .social-btn:hover{
     transform: scale(1.1);
@@ -446,6 +476,7 @@ main{
     align-items: center;
     gap: 145px;
     background-color: #010218;
+    border-bottom: 3px solid #fff;
 }
 .type-group{
     display: flex;
@@ -456,9 +487,9 @@ main{
     gap: 40px;
 }
 .type-btn{
-    width: 415px;
-    min-height: 125px;
-    padding: 25px 0;
+    width: 50%;
+    min-height: 35%;
+    padding: 60px 0;
     border: 2px solid #000;
     color: #000;
     display: flex;
@@ -480,7 +511,7 @@ main{
 }
 .manager-window{
     width: 70%;
-    height: 630px;
+    height: 80%;
     background-color: #86062d;
     display: flex;
     flex-direction: column;
@@ -498,16 +529,18 @@ main{
     align-items: center;
     justify-content: center;
     height: 20%;
+    text-align: center;
 }
 .type-btn-conteiner{
-    width: 60%;
+    position: relative;
+    width: 80%;
+    height: 80%;
     overflow-y: auto;
     /* outline: 3px solid #000; */
     background-color: #fff;
-    height: 400px;
+    height: 450px;
 }
 .content-manager-group{
-    border-top: 3px solid #fff;
     background-color: #010218;
     width: 100%;
     height: 100vh;
@@ -524,19 +557,38 @@ main{
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 150px;
+}
+.formul-package{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
 }
 .formul-name{
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 150px;
+    position: relative;
     font-size: 52px;
+    border-right: 1px solid #fff;
     /* position: absolute;
     left: 150px; */
 }
 .formul-conteiner{
-    border-left: 1px solid #fff;
-    width: 700px;
+    position: relative;
+    width: 500px;
     height: 400px;
     font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+sup{
+    font-size: 15px;
+    position: relative;
+    bottom: 5px;
 }
