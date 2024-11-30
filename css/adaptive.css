@@ -221,6 +221,9 @@
         min-height: 10%;
         padding: 40px;
     }
+    .content-manager{
+        border: none;
+    }
     .formul-package{
         width: 400px;
         height: 100%;
@@ -229,7 +232,7 @@
     .formul-name{
         font-size: 22px;
         padding-bottom: 5px;
-        width: 80%;
+        width: 60%;
         height: auto;
         padding-right: 0;
         border: none;
