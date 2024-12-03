@@ -72,21 +72,29 @@ const managerWrapper = document.querySelector(managerWrapperSelector);
 const typeBtnConteiner = document.querySelector(typeBtnConteinerSelector);
 const contentManagerGroup = document.querySelector(contentManagerGroupSelector);
 const topBtnGroup = document.querySelector(topBtnGroupSelector);
+const startTrainerBtn =  document.querySelector(startTrainerBtnSelector);
+const hStartTrainer = document.querySelector(hStartTrainerSelector);
+const trainerBtnConteiner = document.querySelector(trainerBtnConteinerSelector);
+
+let score = 0;
+let trueFormul;
 
 const startWindowArray = [header, main, footer];
 const classNames = [];
 
 const class7Names = ['Скорость', 'Плотность','Сила тяжести','Сила упругости','Вес тела','Давление в твердых телах','Давление в жидкости/газе','Архимедова сила','Сила трения','Механическая работа','Мощность','Кинетическая энергия','Потенциальная энергия','Момент силы','КПД'];
 classNames.push(class7Names);
-const class8Names = ['Количество теплоты при нагревании','Количество теплоты при охлаждении','Теплота сгорания','Теплота плавления','Теплота парообразования','Закон Кулона','Сила электрического тока','Сопротивление проводника','Электрическое напряжение','Последовательное соединение проводников','Параллельное соединение проводников','Работа тока','Мощность тока','Закон Джоуля-Ленца'];
+const class8Names = ['Количество теплоты','Теплота сгорания','Теплота плавления','Теплота парообразования','Закон Кулона','Сила электрического тока','Сопротивление проводника','Электрическое напряжение','Последовательное соединение проводников','Параллельное соединение проводников','Работа тока','Мощность тока','Закон Джоуля-Ленца'];
 classNames.push(class8Names);
 
 const classFormuls = []
 
 const class7Formul = ['v=s/t','ρ=m/V','F<sub>тяж</sub>=mg','F<sub>упр</sub>=k∆l','P=mg','p=F/S','p=ρgh','F<sub>A</sub>=ρ<sub>т</sub>gV<sub>п.ч.</sub>','F<sub>тр</sub>=μP','A=Fs','N=A/t','E<sub>k</sub>=mv<sup>2</sup>/2','E<sub>п<sub>=mgh','M=Fl','η=A<sub>п</sub>/A<sub>з</sub>*100%'];
 classFormuls.push(class7Formul);
-const class8Formul = ['Q=cm∆t или Q=cm(t<sub>2</sub>-t<sub>1</sub>)','Q=cm∆t или Q=cm(t<sub>2</sub>-t<sub>1</sub>)','Q=qm','Q=λm','Q=Lm','F = k(|q<sub>1</sub>| * |q<sub>2</sub>| / r2)', 'I=q/t','I=U/R','R=ρl/s','U=A/q','','','A=Uq=UIt=I<sup>2</sup>*Rt=(U<sup>2</sup>/R) * t','P=A/t=UI=I<sup>2</sup>R=U<sup>2</sup/R','Q=UIt=I<sup>2</sub>Rt=(U<sup>2</sup>/R )* t'];
+const class8Formul = ['Q=cm∆t или Q=cm(t<sub>2</sub>-t<sub>1</sub>)','Q=qm','Q=λm','Q=Lm','F = k(|q<sub>1</sub>| * |q<sub>2</sub>| / r2)', 'I=q/t','I=U/R','R=ρl/s или U=A/q','','','A=Uq=UIt=I<sup>2</sup>*Rt=(U<sup>2</sup>/R) * t','P=A/t=UI=I<sup>2</sup>R=U<sup>2</sup/R','I<sup>2</sup>Rt'];
 classFormuls.push(class8Formul);
+
+trainerNames = ['скорости', 'плотности','силы тяжести','силы упругости','веса тела','давления в твердых телах','давления в жидкости/газе','архимедовой силы','силы трения','механической работы','мощности','кинетической энергии','потенциальной энергии','момента силы','КПД','количества теплоты при нагревании','количества теплоты при охлаждении','теплоты сгорания','теплоты плавления','теплоты парообразования','закона Кулона','силы электрического тока','сопротивления проводника','электрического напряжения','последовательного соединения проводников','параллельного соединения проводников','работы тока','мощности тока','закона Джоуля-Ленца'];
 
 const contentText = [
     '7 класс',
@@ -107,11 +115,14 @@ class Content{
     }
     DrowFormulConteiner(){
         return `<div class="content-manager">
-                    <div class = "formul-package">
+                    <div class="formul-package">
                         <div class="formul-name">${this.name}</div>
                         <div class="formul-conteiner">${this.formul}</div>
                     </div>
             </div>`;
+    }
+    DrowTrainerConteiner(){
+        return `<div class="trainer-btn true">${this.formul}</div>`;
     }
 }
 
@@ -176,16 +187,181 @@ function ContentManager(){
                 typeBtn[g].addEventListener('click',()=>{                  
                     contentManagerGroup.innerHTML = card.DrowFormulConteiner();
 
-                    bodyOverflowManager('scroll')
+                    bodyOverflowManager('scroll');
                 });
             }
         }
     }
-
-    // for(let g = 0;g<typeBtn.length;g++){
-
-    // }
 }
+
+function DrowTrainerBtn(element){
+    return `<div class="trainer-btn false">${element}</div>`;
+}
+function RemoveTrainerBtnConteiner(){
+    trainerBtnConteiner.style.opacity = '0';
+}
+RemoveTrainerBtnConteiner();
+
+let amountTrainer = 0;
+
+function TrueTrainerBtnManager(element, first){
+    let firstAttemt = false;
+
+    if(!first){
+        if(element.classList.contains('true')){
+            element.style.backgroundColor = 'green';
+            
+            firstAttemt = true;
+        }
+        else{
+            element.style.backgroundColor = 'red';
+        }
+    }
+
+    return firstAttemt;
+}
+
+function StartTrainerManager(){
+    trainerBtnConteiner.innerHTML = null;
+    const randomName = trainerNames[Math.floor(Math.random() * trainerNames.length)]
+    
+    const trainerFormuls = classFormuls.flat();
+
+    hStartTrainer.innerHTML = `Выбери формулу ${randomName}`;
+    startTrainerBtn.style.display = 'none';
+
+    const trueIndex = trainerNames.indexOf(trainerNames.find(randFormul => randFormul == randomName));
+    const card = new Content(randomName, trainerFormuls[trueIndex]);
+
+    trainerBtnConteiner.innerHTML += card.DrowTrainerConteiner();
+    trainerFormuls.splice(trueIndex,1);
+
+    console.log(trainerFormuls);
+    console.log(randomName);
+
+    for(let i = 0;i<3;i++){
+        const randomFormul = trainerFormuls[Math.floor(Math.random() * trainerFormuls.length)];
+        trainerBtnConteiner.innerHTML += DrowTrainerBtn(randomFormul);
+
+        trainerBtnConteiner.style = `
+            transition: 1s;
+            opacity: 1;
+        `;
+    }
+
+    StepManager();
+}
+
+function StepManager(){
+    let amounts = [];
+    let first = false;
+    let step = false;
+
+    const trainerBtn = document.querySelectorAll(trainerBtnSelector);
+
+    for(let i = 0;i<trainerBtn.length;i++){
+        trainerBtn[i].style = `
+            order: ${Math.floor(Math.random() * 4 + 1)};
+        `;
+        let clicked = false;
+
+        trainerBtn[i].addEventListener('click',()=>{
+            if(!clicked){
+                if(trainerBtn[i].classList.contains('true')){
+                    amountTrainer++;
+                    console.log(amountTrainer);
+                }
+                const amount = TrueTrainerBtnManager(trainerBtn[i], first);
+                if(amount){
+                    first = true;
+                    step = true;
+                    const falseTrainer = document.querySelectorAll(falseTrainerSelector);
+    
+                    for(g = 0;g<falseTrainer.length;g++){
+                        falseTrainer[g].style.backgroundColor = 'red';
+                        step = true;
+                    }
+                }
+                if(step){
+                    score++;
+
+                    setTimeout(()=>{
+                        trainerBtnConteiner.style = `
+                            transition: 0.3s;
+                            opacity:0;
+                        `;
+                        setTimeout(()=>{
+                            trainerBtnConteiner.style = `
+                                display:none;
+                            `;
+                            // trainerBtnConteiner.innerHTML = null;
+                            trainerBtnConteiner.style = `
+                                transition: 0.3s;
+                                opacity:1;
+                            `;
+                            setTimeout(()=>{
+                                trainerBtnConteiner.style = `
+                                    display:flex;
+                                `;
+                                // trainerBtnConteiner.innerHTML = null;
+                            }, 500)
+                            StartTrainerManager();
+                        }, 300)
+                    },1000)
+    
+                    step = false;
+                }
+    
+                amounts.push(amount);
+            
+                const trueTrainerBtn = document.querySelector(trueTrainerBtnSelector);
+                
+                if(amounts.length >= 3){
+                    trueTrainerBtn.style.backgroundColor = 'green';
+                
+                    setTimeout(()=>{
+                        trainerBtnConteiner.style = `
+                            transition: 0.3s;
+                            opacity:0;
+                        `;
+                        setTimeout(()=>{
+                            trainerBtnConteiner.style = `
+                                display:none;
+                            `;
+                            // trainerBtnConteiner.innerHTML = null;
+                            trainerBtnConteiner.style = `
+                                transition: 0.3s;
+                                opacity:1;
+                            `;
+                            setTimeout(()=>{
+                                trainerBtnConteiner.style = `
+                                    display:flex;
+                                `;
+                                // trainerBtnConteiner.innerHTML = null;
+                            }, 500)
+                            StartTrainerManager();
+                        }, 300)
+                    },1000)
+
+                    step = false;
+                }
+                
+                clicked = true;
+            }
+        })
+    }
+
+    if(amounts.length >= 3){
+        amountTrainer++;
+        console.log(amountTrainer);
+    }
+
+    console.log(step)
+}
+
+startTrainerBtn.addEventListener('click',()=>{
+    StartTrainerManager();
+})
 
 // для работы кнопки вверх
 let Visible = function (target) {
@@ -229,7 +405,6 @@ window.addEventListener('scroll', function() {
     let visible = Visible(header);
 
     const windowWidth = window.innerWidth;
-    // console.log(windowWidth);
 
     if(windowWidth > 700 && !topBtnRequest){
         if(visible == true){
