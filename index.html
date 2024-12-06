@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/adaptive.css">
+    <script src="js/emailSend.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -40,8 +41,8 @@
         <div class="support-wrapper scroll-element" id="support-wrapper">
             <form class="support-form" id="support" action="">
                 <div class="form-text">Есть вопросы?</div>
-                <input class="support-input" type="text" placeholder="Пиши сюда">
-                <input class="submit-btn" type="submit">
+                <input class="support-input" id="support" type="text" placeholder="Пиши сюда">
+                <input class="submit-btn" type="submit" onclick="SendEmail();">
             </form>
         </div>
         <div class="trainer-wrapper scroll-element" id="trainer-wrapper">
@@ -80,6 +81,11 @@
         </div>
         <div class="content-manager-group" id="content-manager-group"></div>
     </div>
+    <script>
+        document.querySelector('#support').addEventListener('submit',(event)=>{
+            event.preventDefault();
+        })
+    </script>
     <script src="js/selector.js"></script>
     <script src="js/script.js"></script>
 </body>

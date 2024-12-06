@@ -265,9 +265,8 @@ function StartTrainerManager(){
     else{
         trainerBtnConteiner.innerHTML = null;
         startTrainerBtn.style.display = 'flex';
-        hStartTrainer.innerHTML = 'Проверь, как хорошо ты знаком с формулами по физике:)';
-
-        alert(`Поздравляем вы набрали ${score} из ${trueFormul} очков`);
+        startTrainerBtn.innerHTML = 'Заново';
+        hStartTrainer.innerHTML = `Поздравляем вы набрали ${score} из ${trueFormul} очков`;
         
         score = 0;
         trueFormul = 0;
