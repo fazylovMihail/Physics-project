@@ -67,7 +67,7 @@ const header = document.querySelector(headerSelector);
 const main = document.querySelector(mainSelector);
 const footer = document.querySelector(footerSelector);
 const body = document.querySelector(bodySelector);
-const headerManager = document.querySelector(headerManagerSelector);
+const headerManagerH = document.querySelector(headerManagerHSelector);
 const managerWrapper = document.querySelector(managerWrapperSelector);
 const typeBtnConteiner = document.querySelector(typeBtnConteinerSelector);
 const contentManagerGroup = document.querySelector(contentManagerGroupSelector);
@@ -75,6 +75,7 @@ const topBtnGroup = document.querySelector(topBtnGroupSelector);
 const startTrainerBtn =  document.querySelector(startTrainerBtnSelector);
 const hStartTrainer = document.querySelector(hStartTrainerSelector);
 const trainerBtnConteiner = document.querySelector(trainerBtnConteinerSelector);
+const backBtn = document.querySelector(backBtnSelector);
 
 let score = 0;
 let trueFormul = 0;
@@ -98,8 +99,6 @@ trainerNames = ['скорости', 'плотности','силы тяжест�
 
 for(let i = 0;i<trainerNames.length;i++){
     const testFormuls = classFormuls.flat();
-    
-    console.log(testFormuls[i], trainerNames[i]);
 }
 
 const contentText = [
@@ -178,7 +177,7 @@ function ContentManager(){
     
     for(let i = 0;i<circleBtn.length;i++){
         if(circleBtn[i].classList.contains(selectClassContent)){
-            headerManager.innerHTML = contentText[i];
+            headerManagerH.innerHTML = contentText[i];
             
             for(let g = 0;g<classNames[i].length;g++){
                 const card = new Content(classNames[i][g], classFormuls[i][g]);
@@ -220,8 +219,6 @@ function TrueTrainerBtnManager(element, first){
             
             score++;
             firstAttemt = true;
-
-            console.log(score);
         }
         else{
             element.style.backgroundColor = 'red';
@@ -245,9 +242,6 @@ function StartTrainerManager(){
 
     trainerBtnConteiner.innerHTML += card.DrowTrainerConteiner();
     trainerFormuls.splice(trueIndex,1);
-
-    console.log(trainerFormuls);
-    console.log(randomName);
 
     for(let i = 0;i<2;i++){
         const randomFormul = trainerFormuls[Math.floor(Math.random() * trainerFormuls.length)];
@@ -290,7 +284,6 @@ function StepStyle(){
 
 function StepManager(){
     trueFormul++;
-    console.log(trueFormul);
 
     let amounts = [];
     let amountFalse = 0;
@@ -307,14 +300,11 @@ function StepManager(){
         falseTrainer[i].addEventListener('click',()=>{
             if(!clicked){
                 amountFalse++;
-                console.log(amountFalse)
     
                 if(amountFalse>=2){
                     step = true;
 
                     trueTrainerBtn.style.backgroundColor = 'green';
-            
-                    console.log(step);
                 }
 
                 clicked = true;
@@ -358,12 +348,9 @@ function StepManager(){
 
     if(amounts.length >= 2){
         amountTrainer++;
-        console.log(amountTrainer);
 
         StepStyle();
     }
-
-    console.log(step)
 }
 
 startTrainerBtn.addEventListener('click',()=>{
@@ -404,8 +391,37 @@ let Visible = function (target) {
 };
 
 const topBtn = document.querySelector(topBtnSelector);
+const fixedHeader = document.querySelector(fixedHeaderSelector);
 
 let topBtnRequest = false;
+
+function SetStyleVisible(ok){
+    if(ok){
+        topBtnGroup.style = `
+            opacity: 0;
+            z-index: -1;
+        `;
+        topBtn.removeEventListener('click', scrollToHeader);
+
+        fixedHeader.style = `
+            opacity: 0;
+            z-index: -1;
+        `;
+    }
+    else{
+        topBtnGroup.style = `
+            opacity: 1;
+            z-index: 99;
+        `;
+        topBtn.addEventListener('click', scrollToHeader);
+
+        fixedHeader.style = `
+            opacity: 1;
+            z-index: 99;
+        `;
+    }
+
+}
 
 // Запускаем функцию при прокрутке страницы
 window.addEventListener('scroll', function() {
@@ -414,27 +430,10 @@ window.addEventListener('scroll', function() {
     const windowWidth = window.innerWidth;
 
     if(windowWidth > 700 && !topBtnRequest){
-        if(visible == true){
-            topBtnGroup.style = `
-                opacity: 0;
-                z-index: -1;
-            `;
-            topBtn.removeEventListener('click', scrollToHeader);
-        }
-        else{
-            topBtnGroup.style = `
-                opacity: 1;
-                z-index: 99;
-            `;
-            topBtn.addEventListener('click', scrollToHeader);
-        }
+        SetStyleVisible(visible);
     }
     else{
-        topBtnGroup.style = `
-            opacity: 0;
-            z-index: -1;
-        `;
-        topBtn.removeEventListener('click', scrollToHeader);
+        SetStyleVisible(true);
     }
 });
 
@@ -443,7 +442,7 @@ contentTextConteiner.addEventListener('click',()=>{
 
     WindowManager(true);
 })
-headerManager.addEventListener('click',()=>{
+backBtn.addEventListener('click',()=>{
     topBtnRequest = false;
     
     WindowManager(false);
@@ -452,3 +451,20 @@ headerManager.addEventListener('click',()=>{
 function scrollToHeader(){
     header.scrollIntoView({behavior:"smooth"});
 }
+
+// const footerTagFamous = document.querySelector(footerTagFamousSelector);
+// const blurConteiner = document.querySelector(blurConteinerSelector);
+
+// function FooterTagManager(){
+//     body.style = `
+//         filter: blur(10px);
+//     `;
+//     blurConteiner.style = `
+//         filter: none;
+//         background-color: #000;
+//     `;
+// }
+
+// footerTagFamous.addEventListener('click',()=>{
+//     FooterTagManager();
+// })
