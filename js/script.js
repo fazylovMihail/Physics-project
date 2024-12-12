@@ -325,6 +325,12 @@ function StepManager(){
                     step = true;
                 }
                 if(step){
+                    trueTrainerBtn.classList.add('no-click-true-btn');
+
+                    for(let i = 0;i<falseTrainer.length;i++){
+                        falseTrainer[i].style.backgroundColor = 'red';
+                    }
+
                     setTimeout(()=>{
                         StartTrainerManager();
                     },1000);
@@ -338,12 +344,12 @@ function StepManager(){
             }
         })
 
-        if(amounts.length >= 2){
-            trueTrainerBtn.style.backgroundColor = 'green';
-            setTimeout(()=>{
-                StartTrainerManager();
-            },1000);
-        }
+        // if(amounts.length >= 2){
+        //     trueTrainerBtn.style.backgroundColor = 'green';
+        //     setTimeout(()=>{
+        //         StartTrainerManager();
+        //     },1000);
+        // }
     }
 
     if(amounts.length >= 2){

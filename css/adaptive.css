@@ -1,6 +1,9 @@
 @import url(style.css);
 
 @media screen and (max-width:1360px) {
+    .header-fixed-btn-conteiner{
+        font-size: 30px;
+    }
     .top-btn-group{
         width: 160px;
         height: 160px;

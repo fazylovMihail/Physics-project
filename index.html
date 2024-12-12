@@ -50,7 +50,7 @@
             <form class="support-form" id="support" action="">
                 <div class="form-text">Есть вопросы?</div>
                 <input class="support-input" id="support" type="text" placeholder="Пиши сюда">
-                <input class="submit-btn" type="submit" onclick="SendEmail();">
+                <input class="submit-btn" type="submit">
             </form>
         </div>
         <div class="trainer-wrapper scroll-element" id="trainer-wrapper">
@@ -102,6 +102,14 @@
     <script>
         document.querySelector('#support').addEventListener('submit',(event)=>{
             event.preventDefault();
+            const inputSupport = document.querySelector('.support-input').value;
+
+            if(inputSupport){
+                SendEmail();
+            }
+            else{
+                alert('Нужно что-то написать');
+            }
         })
     </script>
     <script src="js/selector.js"></script>
