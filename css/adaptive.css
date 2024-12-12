@@ -78,7 +78,7 @@
     }
     .formul-name{
         font-size: 32px;
-        padding-bottom: 25px;
+        padding-bottom: 30px;
         width: 80%;
         height: 100px;
         padding-right: 0;
@@ -87,7 +87,15 @@
     }
     .formul-conteiner{
         width: 80%;
+        font-size: 25px;
         align-items: normal;
+    }
+    .trainer-btn{
+        min-width: 250px;
+        height: 250px;
+    }
+    .trainer-conteiner{
+        font-size: 46px;
     }
 }
 @media screen and (max-width:796px) {
@@ -244,6 +252,99 @@
     .formul-conteiner{
         width: 80%;
         height: 80%;
+        font-size: 20px;
         align-items: normal;
+    }
+    .back-btn img{
+        width: 35px;
+    }
+    .trainer-btn{
+        min-width: 200px;
+        height: 200px;
+    }
+    .trainer-conteiner{
+        font-size: 40px;
+    }
+    .header-wrapper-downoald-btn:hover{
+        transform: scale(1.05);
+        transition: 0.1s;
+    }
+    .submit-btn:active{
+        background-color: #86062d;
+        border: none;
+        transition: 0.3s;
+    }
+    .start-trainer-btn:active{
+        background-color: #86062d;
+        color: #fff;
+        border: none;
+        transition: 0.3s;
+    }
+    .type-btn:active{
+        transition: 0.3s;
+        background-color: #010218;
+        color: #fff;
+        border: none;
+    }
+}
+
+@media screen and (min-width:701px) {
+    .header-wrapper-downoald-btn:hover{
+        transform: scale(1.05);
+        transition: 0.1s;
+    }
+    .header-btn:hover{
+        background-color: #fff;
+        border: none;
+        color: #000;
+        transition: 0.3s;
+    }
+    .search-btn:hover::after{
+        transition: 0.3s;
+        border: 1px solid #000;
+        width: 100%;
+    }
+    .circle-btn:hover{
+        transform: scale(1.05);
+        transition: 0.2s;
+    }
+    .submit-btn:hover{
+        background-color: #86062d;
+        border: none;
+        transition: 0.3s;
+    }
+    .start-trainer-btn:hover{
+        background-color: #86062d;
+        color: #fff;
+        border: none;
+        transition: 0.3s;
+    }
+    .footer-content2:hover{
+        transform: scale(1.02);
+        transition: 0.15s;
+    }
+    .social-btn:hover{
+        transform: scale(1.1);
+        transition: 0.15s;
+    }
+    .footer-tag-btn:hover::after{
+        transition: 0.3s;
+        border: 1px solid #fff;
+        width: 100%;
+    }
+    .type-btn:hover{
+        transition: 0.3s;
+        background-color: #010218;
+        color: #fff;
+        border: none;
+    }
+    .fixed-btn:hover::after{
+        transition: 0.3s;
+        border: 1px solid #fff;
+        width: 100%;
+    }
+    .back-btn:hover{
+        transform: scale(1.1);
+        transition: 0.3s;
     }
 }

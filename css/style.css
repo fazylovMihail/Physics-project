@@ -87,14 +87,6 @@ header{
     align-items: center;
     cursor: pointer;
 }
-.header-wrapper-downoald-btn:hover{
-    transform: scale(1.05);
-    transition: 0.1s;
-}
-.header-wrapper-downoald-btn:active{
-    transform: scale(1);
-    transition: 0.1s;
-}
 .header-btn-conteiner{
     position: relative;
     width: 938px;
@@ -118,12 +110,6 @@ header{
     border: 1px solid #fff;
     background-color: none;
     color:#fff;
-}
-.header-btn:hover{
-    background-color: #fff;
-    border: none;
-    color: #000;
-    transition: 0.3s;
 }
 .header-btn1{
     grid-column: span 3;
@@ -153,11 +139,6 @@ header{
     width: 0%;
     transition: 0.3s;
 }
-.search-btn:hover::after{
-    transition: 0.3s;
-    border: 1px solid #000;
-    width: 100%;
-}
 .select-btn-header{
     border: none;
     background-color: #fff;
@@ -183,9 +164,6 @@ main{
     justify-content: center;
     background-color: #010218;
     border-bottom: 3px solid #fff;
-    /* border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px; */
-    /* #eeecda */
 }
 .content-text-conteiner{
     width: 100%;
@@ -198,10 +176,6 @@ main{
     user-select: none;
     color:#fff;
 }
-/* .content-text-conteiner:active{
-    transition: 0.3s;
-    filter: blur(5px);
-} */
 .circle-btn-conteiner{
     z-index: 1;
     position: absolute;
@@ -220,10 +194,6 @@ main{
     height: 50px;
     border-radius: 50px;
     cursor: pointer;
-    transition: 0.2s;
-}
-.circle-btn:hover{
-    transform: scale(1.05);
     transition: 0.2s;
 }
 .select-btn-content{
@@ -266,9 +236,6 @@ main{
     border-radius: 15px;
     border: none;
 }
-.support-input:active,:focus{
-    outline: none;
-}
 .submit-btn{
     background-color: transparent;
     color: #fff;
@@ -279,11 +246,6 @@ main{
     font-size: 32px;
     border: 3px solid #fff;
     cursor: pointer;
-    transition: 0.3s;
-}
-.submit-btn:hover{
-    background-color: #86062d;
-    border: none;
     transition: 0.3s;
 }
 .trainer-wrapper{
@@ -323,16 +285,6 @@ main{
     border-radius: 25px;
     user-select: none;
     cursor: pointer;
-    transition: 0.3s;
-}
-.start-trainer-btn:hover{
-    background-color: #86062d;
-    color: #fff;
-    border: none;
-    transition: 0.3s;
-}
-.start-trainer-btn:active{
-    filter: blur(5px);
     transition: 0.3s;
 }
 .trainer-btn-conteiner{
@@ -402,14 +354,6 @@ footer{
     cursor: pointer;
     transition: 0.15s;
 }
-.footer-content2:hover{
-    transform: scale(1.02);
-    transition: 0.15s;
-}
-.footer-content2:active{
-    transform: scale(1);
-    transition: 0.15s;
-}
 .footer-content3{
     grid-column: span 1;
     display: flex;
@@ -429,14 +373,6 @@ footer{
     transition: 0.15s;
     user-select: none;
 }
-.social-btn:hover{
-    transform: scale(1.1);
-    transition: 0.15s;
-}
-.social-btn:active{
-    transform: scale(1);
-    transition: 0.15s;
-}
 .footer-img{
     width: 100%;
     height: 100%;
@@ -455,11 +391,6 @@ footer{
     border: 0px solid #fff;
     width: 0%;
     transition: 0.3s;
-}
-.footer-tag-btn:hover::after{
-    transition: 0.3s;
-    border: 1px solid #fff;
-    width: 100%;
 }
 main{
     width: 100%;
@@ -518,12 +449,6 @@ main{
     user-select: none;
     transition: 0.3s;
     margin: 100px auto;
-}
-.type-btn:hover{
-    transition: 0.3s;
-    background-color: #010218;
-    color: #fff;
-    border: none;
 }
 .manager-window{
     width: 70%;
@@ -645,20 +570,11 @@ sup{
     width: 0%;
     transition: 0.3s;
 }
-.fixed-btn:hover::after{
-    transition: 0.3s;
-    border: 1px solid #fff;
-    width: 100%;
-}
 .back-btn{
     position: absolute;
     top: 25%;
     right: 5%;
     cursor: pointer;
-    transition: 0.3s;
-}
-.back-btn:hover{
-    transform: scale(1.1);
     transition: 0.3s;
 }
 .back-btn img{
