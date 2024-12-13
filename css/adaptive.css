@@ -13,20 +13,23 @@
         height: 140px;
     }
     .content-header{
+        width: 80%;
         flex-direction: column;
         gap:38px;
     }
     .header-btn-conteiner{
         order: 1;
+        width: 100%;
+        font-size: 90%;
     }
     .header-wrapper{
-        width: 938px;
+        width: 100%;
         height: 227px;
         order: 2;
+        font-size: 160%;
     }
     .header-btn{
         height: 227px;
-        font-size: 36px;
     }
     .wrapper-smile{
         bottom: 20px;
@@ -97,6 +100,10 @@
     .trainer-conteiner{
         font-size: 46px;
     }
+    .header-fixed-btn-conteiner{
+        font-size: 150%;
+        gap: 10%;
+    }
 }
 @media screen and (max-width:796px) {
     .footer-content1{
@@ -111,6 +118,7 @@
     .content-header{
         flex-direction: column;
         gap:38px;
+        width: auto;
     }
     .header-btn-conteiner{
         order: 1;
@@ -120,11 +128,11 @@
     }
     .header-wrapper{
         width: 250px;
-        height: 239.4px;
+        height: 280px;
         order: 2;
     }
     .header-btn{
-        font-size: 36px;
+        font-size: 180%;
     }
     .header-btn1{
         grid-column: span 3;
@@ -138,7 +146,7 @@
         grid-column: span 3;
     }
     .wrapper-smile{
-        bottom: 20px;
+        bottom: 5px;
     }
     .header-wrapper-downoald-btn{
         width: 197px;
@@ -286,11 +294,24 @@
         color: #fff;
         border: none;
     }
+    .header-wrapper-downoald-btn:active{
+        background-color: #86062d;
+        transition: 0.1s;
+    }
+    .submit-btn:active{
+        background-color: #86062d;
+        border: none;
+        transition: 0.3s;
+    }
 }
 
 @media screen and (min-width:701px) {
     .header-wrapper-downoald-btn:hover{
         transform: scale(1.05);
+        transition: 0.1s;
+    }
+    .header-wrapper-downoald-btn:active{
+        transform: scale(1);
         transition: 0.1s;
     }
     .header-btn:hover{

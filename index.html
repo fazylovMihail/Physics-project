@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/adaptive.css">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script src="js/emailSend.js"></script>
-    <script>
-        emailjs.init({
-            publicKey: "6yC3wJof9IaSdyeEI",
-        });
-    </script>
     <title>Document</title>
 </head>
 <body>
@@ -66,7 +57,7 @@
             <div class="footer-content footer-content1">
                 <div class="footer-tag-btn footer-tag-famous" onclick="document.querySelector('#content-wrapper').scrollIntoView({ behavior: 'smooth' });">Продукты</div>
                 <div class="footer-tag-btn footer-tag-famous" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Контакты</div>
-                <div class="footer-tag-btn footer-tag-default" onclick="document.querySelector('#support-wrapper').scrollIntoView({ behavior: 'smooth' });">Сообщить об ошибке</div>
+                <div class="footer-tag-btn footer-tag-default" onclick="document.querySelector('#support-wrapper').scrollIntoView({ behavior: 'smooth' });">Помощь</div>
             </div>
             <div class="footer-content footer-content2">Скачать приложение</div>
             <div class="footer-content footer-content3">
@@ -99,19 +90,28 @@
             <div class="fixed-btn" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Тренажёр</div>
         </div>
     </div>
-    <script>
-        document.querySelector('#support').addEventListener('submit',(event)=>{
-            event.preventDefault();
-            const inputSupport = document.querySelector('.support-input').value;
-
-            if(inputSupport){
-                SendEmail();
-            }
-            else{
-                alert('Нужно что-то написать');
-            }
-        })
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    <script src="js/emailSend.js"></script>
+    <script>
+        emailjs.init({
+            publicKey: "6yC3wJof9IaSdyeEI",
+        });
+    </script>
+        <script>
+            document.querySelector('#support').addEventListener('submit',(event)=>{
+                event.preventDefault();
+                const inputSupport = document.querySelector('.support-input').value;
+    
+                if(inputSupport){
+                    SendEmail();
+                }
+                else{
+                    alert('Нужно что-то написать');
+                }
+            })
+        </script>
     <script src="js/selector.js"></script>
     <script src="js/script.js"></script>
 </body>

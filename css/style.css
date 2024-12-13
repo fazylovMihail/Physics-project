@@ -49,7 +49,7 @@ header{
     background-image: linear-gradient(-180deg, #86062d 48%, #010218);
 }
 .content-header{
-    /* width: 80%; */
+    width: 80%;
     min-height: 592px;
     display: flex;
     justify-content: center;
@@ -57,14 +57,14 @@ header{
 }
 .header-wrapper{
     position: relative;
-    width: 575px;
+    width: 50%;
     height: 592px;
     background-color: #010218;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 35px;
+    font-size: 200%;
     order:2;
     border-radius: 15px;
 }
@@ -104,7 +104,7 @@ header{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 45px;
+    font-size: 200%;
     transition: 0.3s;
     user-select: none;
     border: 1px solid #fff;
@@ -113,7 +113,7 @@ header{
 }
 .header-btn1{
     grid-column: span 3;
-    gap: 100px;
+    gap: 10%;
 }
 .header-btn2{
     grid-column: span 1;
@@ -339,7 +339,7 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 68px;
-    font-size: 38px;
+    font-size: 190%;
     border: 1px solid #fff;
 }
 .footer-content2{
@@ -347,7 +347,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 38px;
+    font-size: 190%;
     background-color: #86062d;
     color: #fff;
     user-select: none;
@@ -549,7 +549,7 @@ sup{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 180%;
     gap: 15%;
     color: #fff;
     width: 100%;
