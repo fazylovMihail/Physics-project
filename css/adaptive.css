@@ -330,13 +330,14 @@
         transition: 0.2s;
     }
     .submit-btn:hover{
-        background-color: #86062d;
+        background-color: #efea4a;
         border: none;
         transition: 0.3s;
+        color: #000;
     }
     .start-trainer-btn:hover{
-        background-color: #86062d;
-        color: #fff;
+        background-color: #efea4a;
+        color: #000;
         border: none;
         transition: 0.3s;
     }
