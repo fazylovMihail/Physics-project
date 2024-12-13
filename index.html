@@ -93,29 +93,29 @@
             <div class="fixed-btn" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Тренажёр</div>
         </div>
     </div>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+
+    
+    <script charset="UTF-8" type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/emailSend.js"></script>
-    <script>
+    <script charset="UTF-8">
         emailjs.init({
             publicKey: "6yC3wJof9IaSdyeEI",
         });
     </script>
-        <script>
-            document.querySelector('#support').addEventListener('submit',(event)=>{
-                event.preventDefault();
-                const inputSupport = document.querySelector('.support-input').value;
-    
-                if(inputSupport){
-                    SendEmail();
-                }
-                else{
-                    alert('Нужно что-то написать');
-                }
-            })
-        </script>
-    <script src="js/selector.js"></script>
-    <script src="js/script.js"></script>
+    <script charset="UTF-8">
+        document.querySelector('#support').addEventListener('submit',(event)=>{
+            event.preventDefault();
+            const inputSupport = document.querySelector('.support-input').value;
+
+            if(inputSupport){
+                SendEmail();
+            }
+            else{
+                alert('Нужно что-то написать');
+            }
+        })
+    </script>
+    <script src="js/selector.js" charset="UTF-8"></script>
+    <script src="js/script.js" charset="UTF-8"></script>
 </body>
 </html>
