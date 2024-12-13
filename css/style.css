@@ -236,6 +236,10 @@ main{
     border-radius: 15px;
     border: none;
 }
+.support-input:active, :hover, :focus {
+    outline: none;
+    outline-offset: 0;
+}
 .submit-btn{
     background-color: transparent;
     color: #fff;
