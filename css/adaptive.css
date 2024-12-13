@@ -336,8 +336,8 @@
         color: #000;
     }
     .start-trainer-btn:hover{
-        background-color: #efea4a;
-        color: #000;
+        background-color: #86062d;
+        color: #fff;
         border: none;
         transition: 0.3s;
     }
@@ -368,5 +368,9 @@
     .back-btn:hover{
         transform: scale(1.1);
         transition: 0.3s;
+    }
+    .footer-content2:active{
+        transition: 0.15s;
+        transform: scale(1);
     }
 }
