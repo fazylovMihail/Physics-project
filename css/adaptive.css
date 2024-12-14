@@ -280,6 +280,7 @@
     .submit-btn:active{
         background-color: #86062d;
         border: none;
+        color: #fff;
         transition: 0.3s;
     }
     .start-trainer-btn:active{
@@ -330,10 +331,10 @@
         transition: 0.2s;
     }
     .submit-btn:hover{
-        background-color: #efea4a;
+        background-color: #86062d;
         border: none;
         transition: 0.3s;
-        color: #000;
+        color: #fff;
     }
     .start-trainer-btn:hover{
         background-color: #86062d;

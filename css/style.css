@@ -46,7 +46,7 @@ header{
     justify-content: center;
     align-items: center;
     /* background-color: #86062d; */
-    background-image: linear-gradient(-180deg, #86062d 48%, #010218);
+    background-image: linear-gradient(-180deg, #86062d 18%, #010218);
 }
 .content-header{
     width: 80%;
@@ -197,7 +197,7 @@ main{
     transition: 0.2s;
 }
 .select-btn-content{
-    background-color: #efea4a;
+    background-color: #86062d;
 }
 .support-wrapper{
     background-color: #010218;
