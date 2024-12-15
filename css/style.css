@@ -22,22 +22,29 @@ body{
     right: 50px;
     cursor: pointer;
     user-select: none;
-    transition: 0.3s;
-    width: 190px;
-    height: 190px;
+    transition: 0.15s;
+    width: 150px;
+    height: 150px;
+}
+.top-btn-group:hover{
+    transform: scale(1.05);
+    transition: 0.15s;
+}
+.top-btn-group:active{
+    transform: scale(1);
+    transition: 0.15s;
 }
 .top-btn{
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #222780;
     border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .top-img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
 }
 header{
     width: 100%;
@@ -45,8 +52,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #86062d; */
-    background-image: linear-gradient(-180deg, #86062d 18%, #010218);
+    /* background-color: #d93232; */
+    background-image: linear-gradient(-180deg, #222780 18%, #010218);
 }
 .content-header{
     width: 80%;
@@ -163,7 +170,7 @@ main{
     display: flex;
     justify-content: center;
     background-color: #010218;
-    border-bottom: 3px solid #fff;
+    /* border-bottom: 3px solid #fff; */
 }
 .content-text-conteiner{
     width: 100%;
@@ -171,7 +178,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 180px;
+    font-size: 170px;
     cursor: pointer;
     user-select: none;
     color:#fff;
@@ -197,7 +204,7 @@ main{
     transition: 0.2s;
 }
 .select-btn-content{
-    background-color: #86062d;
+    background-color: #d93232;
 }
 .support-wrapper{
     background-color: #010218;
@@ -259,7 +266,7 @@ main{
     justify-content: center;
     align-items: center;
     background-color: #010218;
-    border-top: 3px solid #fff;
+    /* border-top: 3px solid #fff; */
     padding: 50px 0;
     /* border-top-left-radius: 50px;
     border-top-right-radius: 50px; */
@@ -267,7 +274,7 @@ main{
 .trainer-conteiner{
     width: 90%;
     height: 70%;
-    font-size: 56px;
+    font-size: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -352,7 +359,7 @@ footer{
     justify-content: center;
     align-items: center;
     font-size: 190%;
-    background-color: #86062d;
+    background-color: #d93232;
     color: #fff;
     user-select: none;
     cursor: pointer;
@@ -457,7 +464,7 @@ main{
 .manager-window{
     width: 70%;
     height: 80%;
-    background-color: #86062d;
+    background-color: #d93232;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -539,7 +546,7 @@ sup{
 }
 .fixed-header{
     opacity: 0;
-    background-color: #86062d;
+    background-color: #222780;
     position: fixed;
     top: 25px;
     left: 12.5%;
@@ -586,4 +593,8 @@ sup{
 }
 .no-click-true-btn{
     pointer-events: none;
+}
+.past{
+    width: 100%;
+    border: 2px solid #fff;
 }

@@ -41,7 +41,7 @@
     <g
        id="g2">
       <rect
-         style="fill:#010218;stroke-width:0.746297"
+         style="fill:#fff;stroke-width:0.746297"
          id="rect1"
          width="628.12103"
          height="175.8277"
@@ -51,7 +51,7 @@
          ry="24.085545" />
       <path
          sodipodi:type="star"
-         style="fill:#010218"
+         style="fill:#fff"
          id="path1"
          inkscape:flatsided="true"
          sodipodi:sides="3"

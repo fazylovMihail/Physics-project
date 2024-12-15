@@ -214,14 +214,14 @@ function TrueTrainerBtnManager(element, first){
 
     if(!first){
         if(element.classList.contains('true')){
-            element.style.backgroundColor = 'green';
+            element.style.backgroundColor = '#42ff71';
             StepStyle()
             
             score++;
             firstAttemt = true;
         }
         else{
-            element.style.backgroundColor = 'red';
+            element.style.backgroundColor = '#d93232';
         }
     }
 
@@ -304,7 +304,7 @@ function StepManager(){
                 if(amountFalse>=2){
                     step = true;
 
-                    trueTrainerBtn.style.backgroundColor = 'green';
+                    trueTrainerBtn.style.backgroundColor = '#42ff71';
                 }
 
                 clicked = true;
@@ -328,7 +328,7 @@ function StepManager(){
                     trueTrainerBtn.classList.add('no-click-true-btn');
 
                     for(let i = 0;i<falseTrainer.length;i++){
-                        falseTrainer[i].style.backgroundColor = 'red';
+                        falseTrainer[i].style.backgroundColor = '#d93232';
                     }
 
                     setTimeout(()=>{
@@ -345,7 +345,7 @@ function StepManager(){
         })
 
         // if(amounts.length >= 2){
-        //     trueTrainerBtn.style.backgroundColor = 'green';
+        //     trueTrainerBtn.style.backgroundColor = '#42ff71';
         //     setTimeout(()=>{
         //         StartTrainerManager();
         //     },1000);
