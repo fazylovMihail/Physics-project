@@ -92,7 +92,7 @@ const classFormuls = []
 
 const class7Formul = ['v=s/t','ρ=m/V','F<sub>тяж</sub>=mg','F<sub>упр</sub>=k∆l','P=mg','p=F/S','p=ρgh','F<sub>A</sub>=ρ<sub>т</sub>gV<sub>п.ч.</sub>','F<sub>тр</sub>=μP','A=Fs','N=A/t','E<sub>k</sub>=mv<sup>2</sup>/2','E<sub>п<sub>=mgh','M=Fl','η=A<sub>п</sub>/A<sub>з</sub>*100%'];
 classFormuls.push(class7Formul);
-const class8Formul = ['Q=cm∆t или Q=cm(t<sub>2</sub>-t<sub>1</sub>)','Q=qm','Q=λm','Q=Lm','F = k(|q<sub>1</sub>| * |q<sub>2</sub>| / r2)', 'I=q/t или I=U/R','R=ρl/s','U=A/q','','','A=Uq=UIt=I<sup>2</sup>*Rt=(U<sup>2</sup>/R) * t','P=A/t=UI=I<sup>2</sup>R=U<sup>2</sup/R','I<sup>2</sup>Rt'];
+const class8Formul = ['Q=cm∆t','Q=qm','Q=λm','Q=Lm','F = k(|q<sub>1</sub>| * |q<sub>2</sub>| / r2)', 'I=q/t или I=U/R','R=ρl/s','U=A/q','','','A=Uq=UIt=I<sup>2</sup>*Rt=(U<sup>2</sup>/R) * t','P=A/t=UI=I<sup>2</sup>R=U<sup>2</sup/R','I<sup>2</sup>Rt'];
 classFormuls.push(class8Formul);
 
 trainerNames = ['скорости', 'плотности','силы тяжести','силы упругости','веса тела','давления в твердых телах','давления в жидкости/газе','архимедовой силы','силы трения','механической работы','мощности','кинетической энергии','потенциальной энергии','момента силы','КПД','количества теплоты','теплоты сгорания','теплоты плавления','теплоты парообразования','закона Кулона','силы электрического тока','сопротивления проводника','электрического напряжения','последовательного соединения проводников','параллельного соединения проводников','работы тока','мощности тока','закона Джоуля-Ленца'];

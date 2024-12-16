@@ -276,6 +276,9 @@
     .trainer-conteiner{
         font-size: 40px;
     }
+    .trainer-btn-conteiner{
+        font-size: 70%;
+    }
     .header-wrapper-downoald-btn:hover{
         transform: scale(1.05);
         transition: 0.1s;

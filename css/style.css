@@ -306,6 +306,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 90px;
+    font-size: 90%;
 }
 .trainer-btn{
     min-width: 300px;
