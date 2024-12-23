@@ -95,12 +95,6 @@ classFormuls.push(class7Formul);
 const class8Formul = ['Q=cm∆t','Q=qm','Q=λm','Q=Lm','F = k(|q<sub>1</sub>| * |q<sub>2</sub>| / r2)', 'I=q/t или I=U/R','R=ρl/s','U=A/q','','','A=Uq=UIt=I<sup>2</sup>*Rt=(U<sup>2</sup>/R) * t','P=A/t=UI=I<sup>2</sup>R=U<sup>2</sup/R','I<sup>2</sup>Rt'];
 classFormuls.push(class8Formul);
 
-trainerNames = ['скорости', 'плотности','силы тяжести','силы упругости','веса тела','давления в твердых телах','давления в жидкости/газе','архимедовой силы','силы трения','механической работы','мощности','кинетической энергии','потенциальной энергии','момента силы','КПД','количества теплоты','теплоты сгорания','теплоты плавления','теплоты парообразования','закона Кулона','силы электрического тока','сопротивления проводника','электрического напряжения','последовательного соединения проводников','параллельного соединения проводников','работы тока','мощности тока','закона Джоуля-Ленца'];
-
-for(let i = 0;i<trainerNames.length;i++){
-    const testFormuls = classFormuls.flat();
-}
-
 const contentText = [
     '7 класс',
     '8 класс',
@@ -228,23 +222,25 @@ function TrueTrainerBtnManager(element, first){
     return firstAttemt;
 }
 
-function StartTrainerManager(){
+let trainerNames;
+let trainerFormuls;
+
+function StartTrainerManager(arrayFormul, arrayName){
     trainerBtnConteiner.innerHTML = null;
-    const randomName = trainerNames[Math.floor(Math.random() * trainerNames.length)]
-    
-    const trainerFormuls = classFormuls.flat();
+    const randomName = arrayName[Math.floor(Math.random() * arrayName.length)]
 
     hStartTrainer.innerHTML = `Выбери формулу ${randomName}`;
     startTrainerBtn.style.display = 'none';
 
-    const trueIndex = trainerNames.indexOf(trainerNames.find(randFormul => randFormul == randomName));
-    const card = new Content(randomName, trainerFormuls[trueIndex]);
+    const trueIndex = arrayName.indexOf(arrayName.find(randFormul => randFormul == randomName));
+    const card = new Content(randomName, arrayFormul[trueIndex]);
 
     trainerBtnConteiner.innerHTML += card.DrowTrainerConteiner();
-    trainerFormuls.splice(trueIndex,1);
+    arrayFormul.splice(trueIndex,1);
+    arrayName.splice(trueIndex, 1);
 
     for(let i = 0;i<2;i++){
-        const randomFormul = trainerFormuls[Math.floor(Math.random() * trainerFormuls.length)];
+        const randomFormul = arrayFormul[Math.floor(Math.random() * arrayFormul.length)];
         trainerBtnConteiner.innerHTML += DrowTrainerBtn(randomFormul);
 
         trainerBtnConteiner.style = `
@@ -267,6 +263,8 @@ function StartTrainerManager(){
 
         return;
     }
+
+    console.log(arrayFormul.length);
 }
 
 function StepStyle(){
@@ -332,7 +330,7 @@ function StepManager(){
                     }
 
                     setTimeout(()=>{
-                        StartTrainerManager();
+                        StartTrainerManager(trainerFormuls, trainerNames);
                     },1000);
     
                     step = false;
@@ -360,7 +358,10 @@ function StepManager(){
 }
 
 startTrainerBtn.addEventListener('click',()=>{
-    StartTrainerManager();
+    trainerNames = ['скорости', 'плотности','силы тяжести','силы упругости','веса тела','давления в твердых телах','давления в жидкости/газе','архимедовой силы','силы трения','механической работы','мощности','кинетической энергии','потенциальной энергии','момента силы','КПД','количества теплоты','теплоты сгорания','теплоты плавления','теплоты парообразования','закона Кулона','силы электрического тока','сопротивления проводника','электрического напряжения','последовательного соединения проводников','параллельного соединения проводников','работы тока','мощности тока','закона Джоуля-Ленца'];
+    trainerFormuls = classFormuls.flat()
+
+    StartTrainerManager(trainerFormuls, trainerNames);
 })
 
 // для работы кнопки вверх
