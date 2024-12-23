@@ -7,7 +7,7 @@ body{
     height: 100vh;
     position: relative;
     overflow-x: hidden;
-    background-color: #010218;
+    background-color: #fff;
     transition: 2s;
 }
 
@@ -37,7 +37,7 @@ body{
 .top-btn{
     width: 100%;
     height: 100%;
-    background-color: #222780;
+    background-color: #ffc334;
     border-radius: 100px;
     display: flex;
     justify-content: center;
@@ -52,8 +52,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #d93232; */
-    background-image: linear-gradient(-180deg, #222780 18%, #010218);
+    background-color: #000;
+    /* background-image: linear-gradient(-180deg, #000 18%, #000); */
 }
 .content-header{
     width: 80%;
@@ -66,8 +66,8 @@ header{
     position: relative;
     width: 50%;
     height: 592px;
-    background-color: #010218;
-    color: #fff;
+    background-color: #ffc334;
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,8 +83,8 @@ header{
 }
 .header-wrapper-downoald-btn{
     width: 458px;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     transition: 0.1s;
     border-radius: 15px;
     user-select: none;
@@ -148,7 +148,7 @@ header{
 }
 .select-btn-header{
     border: none;
-    background-color: #fff;
+    background-color: #ffc334;
     color: #000;
 }
 .wrapper-smile{
@@ -169,7 +169,7 @@ main{
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: #010218;
+    background-color: #fff;
     /* border-bottom: 3px solid #fff; */
 }
 .content-text-conteiner{
@@ -181,7 +181,7 @@ main{
     font-size: 170px;
     cursor: pointer;
     user-select: none;
-    color:#fff;
+    color:#000;
 }
 .circle-btn-conteiner{
     z-index: 1;
@@ -196,7 +196,7 @@ main{
     height: 150px;
 }
 .circle-btn{
-    background-color: #fff;
+    background-color: #000;
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -204,10 +204,10 @@ main{
     transition: 0.2s;
 }
 .select-btn-content{
-    background-color: #d93232;
+    background-color: #ffc334;
 }
 .support-wrapper{
-    background-color: #010218;
+    background-color: #000;
     position: relative;
     width: 100%;
     height: 100vh;
@@ -265,8 +265,8 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #010218;
-    /* border-top: 3px solid #fff; */
+    background-color: #fff;
+    /* border-top: 3px solid #000; */
     padding: 50px 0;
     /* border-top-left-radius: 50px;
     border-top-right-radius: 50px; */
@@ -283,13 +283,13 @@ main{
 }
 .h-start-trainer{
     text-align: center;
-    color: #fff;
+    color: #000;
 }
 .start-trainer-btn{
     width: 500px;
     height: 200px;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,7 +312,7 @@ main{
     min-width: 300px;
     height: 300px;
     padding: 0 25px;
-    background-color: #fff;
+    background-color: #000;
     border-radius: 15px;
     color: #000;
     display: flex;
@@ -323,7 +323,7 @@ main{
     transition: 0.3s;
 }
 footer{
-    background-color: #010218;
+    background-color: #000;
     width: 100%;
     min-height: 55vh;
     color: #fff;
@@ -360,8 +360,8 @@ footer{
     justify-content: center;
     align-items: center;
     font-size: 190%;
-    background-color: #d93232;
-    color: #fff;
+    background-color: #ffc334;
+    color: #000;
     user-select: none;
     cursor: pointer;
     transition: 0.15s;
@@ -411,7 +411,7 @@ main{
     display: none;
     width: 100%;
     height: 100vh;
-    background-color: #010218;
+    background-color: #000;
 }
 .header-manager{
     position: relative;
@@ -424,7 +424,7 @@ main{
     color: #fff;
     font-size: 52px;
     user-select: none;
-    background-color: #010218;
+    background-color: #000;
 }
 .manager{
     background-color: #fff;
@@ -434,7 +434,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 145px;
-    background-color: #010218;
+    background-color: #000;
     border-bottom: 3px solid #fff;
 }
 .type-group{
@@ -449,8 +449,8 @@ main{
     width: 50%;
     min-height: 35%;
     padding: 60px 0;
-    border: 2px solid #000;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -465,7 +465,8 @@ main{
 .manager-window{
     width: 70%;
     height: 80%;
-    background-color: #d93232;
+    background-color: transparent;
+    box-shadow: 0vw 0vw 1vw 0.25vw white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -490,11 +491,11 @@ main{
     height: 80%;
     overflow-y: auto;
     /* outline: 3px solid #000; */
-    background-color: #fff;
+    background-color: #ffc334;
     height: 450px;
 }
 .content-manager-group{
-    background-color: #010218;
+    background-color: #000;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -547,7 +548,7 @@ sup{
 }
 .fixed-header{
     opacity: 0;
-    background-color: #222780;
+    background-color: #ffc334;
     position: fixed;
     top: 25px;
     left: 12.5%;
@@ -563,7 +564,7 @@ sup{
     align-items: center;
     font-size: 180%;
     gap: 15%;
-    color: #fff;
+    color: #000;
     width: 100%;
     height: 100%;
 }
@@ -578,7 +579,7 @@ sup{
     position: absolute;
     bottom: -5px;
     left: 0;
-    border: 0px solid #fff;
+    border: 0px solid #000;
     width: 0%;
     transition: 0.3s;
 }
@@ -596,7 +597,7 @@ sup{
     pointer-events: none;
 }
 .past{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
-    border: 2px solid #fff;
+    border: 2px solid #000;
 }

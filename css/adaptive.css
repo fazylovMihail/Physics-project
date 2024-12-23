@@ -284,40 +284,47 @@
         transition: 0.1s;
     }
     .submit-btn:active{
-        background-color: #d93232;
+        background-color: #ffc334;
         border: none;
-        color: #fff;
+        color: #000;
         transition: 0.3s;
     }
     .start-trainer-btn:active{
-        background-color: #d93232;
-        color: #fff;
+        background-color: #ffc334;
+        color: #000;
         border: none;
         transition: 0.3s;
     }
     .type-btn:active{
         transition: 0.3s;
-        background-color: #010218;
-        color: #fff;
+        background-color: #fff;
+        color: #000;
         border: none;
     }
     .header-wrapper-downoald-btn:active{
-        background-color: #d93232;
+        background-color: #ffc334;
+        color: #000;
         transition: 0.1s;
     }
     .submit-btn:active{
-        background-color: #d93232;
+        background-color: #ffc334;
+        color: #000;
         border: none;
         transition: 0.3s;
     }
     .footer-content2:active{
         transition: 0.15s;
-        background-color: #d93232;
+        background-color: #ffc334;
+        color: #000;
         border: none;
     }
 }
 
 @media screen and (min-width:701px) {
+    .trainer-btn:hover{
+        background-color: #202020;
+        transition: 0.3s;
+    }
     .header-wrapper-downoald-btn:hover{
         transform: scale(1.05);
         transition: 0.1s;
@@ -326,15 +333,9 @@
         transform: scale(1);
         transition: 0.1s;
     }
-    .header-btn:hover{
-        background-color: #fff;
-        border: none;
-        color: #000;
-        transition: 0.3s;
-    }
     .search-btn:hover::after{
         transition: 0.3s;
-        border: 1px solid #000;
+        border: 1px solid #ffc334;
         width: 100%;
     }
     .circle-btn:hover{
@@ -342,14 +343,14 @@
         transition: 0.2s;
     }
     .submit-btn:hover{
-        background-color: #d93232;
+        background-color: #ffc334;
+        color: #000;
         border: none;
         transition: 0.3s;
-        color: #fff;
     }
     .start-trainer-btn:hover{
-        background-color: #d93232;
-        color: #fff;
+        background-color: #ffc334;
+        color: #000;
         border: none;
         transition: 0.3s;
     }
@@ -368,13 +369,13 @@
     }
     .type-btn:hover{
         transition: 0.3s;
-        background-color: #010218;
-        color: #fff;
+        background-color: #fff;
+        color: #000;
         border: none;
     }
     .fixed-btn:hover::after{
         transition: 0.3s;
-        border: 1px solid #fff;
+        border: 1px solid #000;
         width: 100%;
     }
     .back-btn:hover{
