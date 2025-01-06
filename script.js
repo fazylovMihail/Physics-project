@@ -1,3 +1,7 @@
+import { WindowManager } from "./js/windowManager.js";
+import { classFormuls } from './js/class.js';
+import { Content } from "./js/contentSystemClass.js";
+
 // переменные
 const headerSelectsBtn = document.querySelectorAll(selectsBtnSelector);
 const headerWrapper = document.querySelector(headerWrapperSelector);
@@ -67,130 +71,29 @@ const header = document.querySelector(headerSelector);
 const main = document.querySelector(mainSelector);
 const footer = document.querySelector(footerSelector);
 const body = document.querySelector(bodySelector);
-const headerManagerH = document.querySelector(headerManagerHSelector);
-const managerWrapper = document.querySelector(managerWrapperSelector);
-const typeBtnConteiner = document.querySelector(typeBtnConteinerSelector);
-const contentManagerGroup = document.querySelector(contentManagerGroupSelector);
 const topBtnGroup = document.querySelector(topBtnGroupSelector);
 const startTrainerBtn =  document.querySelector(startTrainerBtnSelector);
 const hStartTrainer = document.querySelector(hStartTrainerSelector);
 const trainerBtnConteiner = document.querySelector(trainerBtnConteinerSelector);
-const backBtn = document.querySelector(backBtnSelector);
 
 let score = 0;
 let trueFormul = 0;
 
 const startWindowArray = [header, main, footer];
-const classNames = [];
-
-const class7Names = ['Скорость', 'Плотность','Сила тяжести','Сила упругости','Вес тела','Давление в твердых телах','Давление в жидкости/газе','Архимедова сила','Сила трения','Механическая работа','Мощность','Кинетическая энергия','Потенциальная энергия','Момент силы','КПД'];
-classNames.push(class7Names);
-const class8Names = ['Количество теплоты','Теплота сгорания','Теплота плавления','Теплота парообразования','Закон Кулона','Сила электрического тока','Сопротивление проводника','Электрическое напряжение','Последовательное соединение проводников','Параллельное соединение проводников','Работа тока','Мощность тока','Закон Джоуля-Ленца'];
-classNames.push(class8Names);
-
-const classFormuls = []
-
-const class7Formul = ['v=s/t','ρ=m/V','F<sub>тяж</sub>=mg','F<sub>упр</sub>=k∆l','P=mg','p=F/S','p=ρgh','F<sub>A</sub>=ρ<sub>т</sub>gV<sub>п.ч.</sub>','F<sub>тр</sub>=μP','A=Fs','N=A/t','E<sub>k</sub>=mv<sup>2</sup>/2','E<sub>п<sub>=mgh','M=Fl','η=A<sub>п</sub>/A<sub>з</sub>*100%'];
-classFormuls.push(class7Formul);
-const class8Formul = ['Q=cm∆t','Q=qm','Q=λm','Q=Lm','F = k(|q<sub>1</sub>| * |q<sub>2</sub>| / r2)', 'I=q/t или I=U/R','R=ρl/s','U=A/q','','','A=Uq=UIt=I<sup>2</sup>*Rt=(U<sup>2</sup>/R) * t','P=A/t=UI=I<sup>2</sup>R=U<sup>2</sup/R','I<sup>2</sup>Rt'];
-classFormuls.push(class8Formul);
-
 const contentText = [
     '7 класс',
     '8 класс',
     '9 класс',
 ]
 
-class Content{
-    constructor(
-        name,
-        formul,
-    ){
-        this.name = name;
-        this.formul = formul;
-    }
-    DrowTypeBtn(){
-        return `<div class="type-btn" onclick="document.querySelector('#content-manager-group').scrollIntoView({ behavior: 'smooth' });">${this.name}</div>`;
-    }
-    DrowFormulConteiner(){
-        return `<div class="content-manager">
-                    <div class="formul-package">
-                        <div class="formul-name">${this.name}</div>
-                        <div class="formul-conteiner">${this.formul}</div>
-                    </div>
-            </div>`;
-    }
-    DrowTrainerConteiner(){
-        return `<div class="trainer-btn true">${this.formul}</div>`;
-    }
-}
-
 SelectManagerContent(circleBtn[0], 0, selectClassContent);
+localStorage.setItem('indexContentText', 0);
 
 for(let i = 0;i<circleBtn.length;i++){
     circleBtn[i].addEventListener('click', ()=>{
-        SelectManagerContent(circleBtn[i], i, selectClassContent);
+        localStorage.setItem('indexContentText', i);
+        SelectManagerContent(circleBtn[i], i, selectClassContent); 
     })
-}
-
-function bodyOverflowManager(overParams){
-    body.style = `
-        overflow-y: ${overParams};    
-    `
-}
-
-function WindowManager(ok){
-    bodyOverflowManager('hidden');
-
-    if(ok){
-        for(let i = 0;i<startWindowArray.length;i++){
-            startWindowArray[i].style.display = 'none';
-        }
-        managerWrapper.style.display = 'block';
-
-        window.scrollTo(0,0);
-    }
-    else{
-        for(let i = 0;i<startWindowArray.length;i++){
-            startWindowArray[i].style.display = 'flex';
-        }
-        managerWrapper.style.display = 'none';
-
-        document.querySelector('.content-wrapper').scrollIntoView({behavior:"instant"});
-
-        bodyOverflowManager('scroll');
-    }
-    
-    ContentManager();
-}
-
-let cards = [];
-
-function ContentManager(){
-    typeBtnConteiner.innerHTML = null;
-    
-    for(let i = 0;i<circleBtn.length;i++){
-        if(circleBtn[i].classList.contains(selectClassContent)){
-            headerManagerH.innerHTML = contentText[i];
-            
-            for(let g = 0;g<classNames[i].length;g++){
-                const card = new Content(classNames[i][g], classFormuls[i][g]);
-    
-                typeBtnConteiner.innerHTML += card.DrowTypeBtn();
-            }
-            for(let g = 0;g<classFormuls[i].length;g++){
-                const card = new Content(classNames[i][g], classFormuls[i][g]);
-
-                const typeBtn = document.querySelectorAll(typeBtnSelector);
-
-                typeBtn[g].addEventListener('click',()=>{                  
-                    contentManagerGroup.innerHTML = card.DrowFormulConteiner();
-
-                    bodyOverflowManager('scroll');
-                });
-            }
-        }
-    }
 }
 
 function DrowTrainerBtn(element){
@@ -400,7 +303,8 @@ let Visible = function (target) {
 const topBtn = document.querySelector(topBtnSelector);
 const fixedHeader = document.querySelector(fixedHeaderSelector);
 
-let topBtnRequest = false;
+localStorage.setItem('topBtnRequest', false);
+let topBtnRequestLocal = localStorage.getItem('topBtnRequest');
 
 function SetStyleVisible(ok){
     if(ok){
@@ -436,7 +340,7 @@ window.addEventListener('scroll', function() {
 
     const windowWidth = window.innerWidth;
 
-    if(windowWidth > 700 && !topBtnRequest){
+    if(windowWidth > 700 && !topBtnRequestLocal){
         SetStyleVisible(visible);
     }
     else{
@@ -445,14 +349,10 @@ window.addEventListener('scroll', function() {
 });
 
 contentTextConteiner.addEventListener('click',()=>{
-    topBtnRequest = true;
+    topBtnRequestLocal = true;
+    localStorage.setItem('topBtnRequest', topBtnRequestLocal);
 
     WindowManager(true);
-})
-backBtn.addEventListener('click',()=>{
-    topBtnRequest = false;
-    
-    WindowManager(false);
 })
 
 function scrollToHeader(){
