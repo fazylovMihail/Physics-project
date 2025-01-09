@@ -69,6 +69,7 @@
         height: 80px;
     }
     .type-btn{
+        min-height: 10%;
         font-size: 170%;
     }
     .header-manager{
@@ -369,8 +370,8 @@
     }
     .type-btn:hover{
         transition: 0.3s;
-        background-color: #fff;
-        color: #000;
+        background-color: #000;
+        color: #fff;
         border: none;
     }
     .fixed-btn:hover::after{
