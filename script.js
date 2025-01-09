@@ -266,6 +266,9 @@ startTrainerBtn.addEventListener('click',()=>{
 
     StartTrainerManager(trainerFormuls, trainerNames);
 })
+contentTextConteiner.addEventListener('click',()=>{
+    WindowManager(true);
+})
 
 // для работы кнопки вверх
 let Visible = function (target) {
@@ -303,9 +306,6 @@ let Visible = function (target) {
 const topBtn = document.querySelector(topBtnSelector);
 const fixedHeader = document.querySelector(fixedHeaderSelector);
 
-localStorage.setItem('topBtnRequest', false);
-let topBtnRequestLocal = localStorage.getItem('topBtnRequest');
-
 function SetStyleVisible(ok){
     if(ok){
         topBtnGroup.style = `
@@ -340,20 +340,13 @@ window.addEventListener('scroll', function() {
 
     const windowWidth = window.innerWidth;
 
-    if(windowWidth > 700 && !topBtnRequestLocal){
+    if(windowWidth > 700){
         SetStyleVisible(visible);
     }
     else{
         SetStyleVisible(true);
     }
 });
-
-contentTextConteiner.addEventListener('click',()=>{
-    topBtnRequestLocal = true;
-    localStorage.setItem('topBtnRequest', topBtnRequestLocal);
-
-    WindowManager(true);
-})
 
 function scrollToHeader(){
     header.scrollIntoView({behavior:"smooth"});
