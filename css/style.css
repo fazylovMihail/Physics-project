@@ -62,6 +62,9 @@ header{
     color: #fff;
     font-family: 'Rubik Mono One';
 }
+.h-wrapper *{
+    white-space: nowrap;
+}
 h1{
     font-size: 100px;
 }
