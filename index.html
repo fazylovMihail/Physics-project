@@ -4,107 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/adaptive.css">
-    <meta name="description" content="Easy finding of formulas in physics">
-    <meta name="keywords" content="PhysDream, формулы, легко, physdream">
-    <meta name="author" content="Fazylov Mihail">
-    <title>PhysDream</title>
+    <title>Document</title>
 </head>
 <body>
-    <div class="top-btn-group" title="вверх">
-        <div class="top-btn"><img class="top-img" src="img/Кнопка вверх.svg" alt=""></div>
-    </div>
-    
-    <header class="scroll-element">
-        <div class="content-header">
-            <div class="header-wrapper">
-                <div class="header-wrapper-text-conteiner"></div>
+    <header>
+        <div class="top-header">
+            <p class="company-name">PHYS DREAM</p>
+            <div class="past-nav"><hr></div>
+            <div class="key-btn-wrapper">
+                <button class="key-btn">формулы</button>
+                <button class="key-btn">тренажёр</button>
+                <button class="key-btn">язык/RUS</button>
             </div>
-            <div class="header-btn-conteiner">
-                <div class="header-btn header-btn1">
-                    <div class="search-btn" onclick="document.querySelector('#content-wrapper').scrollIntoView({ behavior: 'smooth' });">Продукты</div>
-                    <div class="search-btn" onclick="document.querySelector('#support-wrapper').scrollIntoView({ behavior: 'smooth' });">Помощь</div>
-                    <div class="search-btn" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Тренажёр</div>
-                </div>
-                <div class="selects header-btn header-btn2">PhysDream</div>
-                <div class="selects header-btn header-btn3">Скачать приложение</div>
-            </div>
+        </div>
+        <div class="h-wrapper">
+            <h1>&nbsp&nbsp&nbsp
+                Сайт для<br><span class="red-color-h">поиска формул</span><br>по физике
+            </h1>
+            <p class="h-paragraf">поможем найти формулу или написать шпаргалку</p>
         </div>
     </header>
-    <main>
-        <div class="content-wrapper scroll-element" id="content-wrapper">
-            <div class="content-text-conteiner"></div>
-            <div class="circle-btn-conteiner">
-                <div class="circle-btn"></div>
-                <div class="circle-btn"></div>
-                <div class="circle-btn"></div>
-            </div>
-        </div>
-        <div class="past"></div>
-        <div class="trainer-wrapper scroll-element" id="trainer-wrapper">
-            <div class="trainer-conteiner start-trainer">
-                <div class="h-start-trainer">Проверь, как хорошо ты знаком с формулами по физике:)</div>
-                <div class="start-trainer-btn">Начать</div>
-                <div class="trainer-btn-conteiner"></div>
-            </div>
-        </div>
-        <div class="support-wrapper scroll-element" id="support-wrapper">
-            <form class="support-form" action="">
-                <div class="form-text">Есть вопросы?</div>
-                <input class="support-input" id="support" type="text" placeholder="Пиши сюда">
-                <input class="submit-btn" type="submit">
-            </form>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-content-conteiner">
-            <div class="footer-content footer-content1">
-                <div class="footer-tag-btn footer-tag-famous" onclick="document.querySelector('#content-wrapper').scrollIntoView({ behavior: 'smooth' });">Продукты</div>
-                <div class="footer-tag-btn footer-tag-famous" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Контакты</div>
-                <div class="footer-tag-btn footer-tag-default" onclick="document.querySelector('#support-wrapper').scrollIntoView({ behavior: 'smooth' });">Помощь</div>
-            </div>
-            <div class="footer-content footer-content2">Скачать приложение</div>
-            <div class="footer-content footer-content3">
-                <div class="social-btn-conteiner">
-                    <div class="social-btn"><img class="footer-img" src="img/icons8-телеграмма-app (1).svg" alt=""></div>
-                    <div class="social-btn"><img class="footer-img" src="img/icons8-твиттерх (1).svg" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="fixed-header">
-        <div class="header-fixed-btn-conteiner">
-            <div class="fixed-btn" onclick="document.querySelector('#content-wrapper').scrollIntoView({ behavior: 'smooth' });">Продукты</div>
-            <div class="fixed-btn" onclick="document.querySelector('#support-wrapper').scrollIntoView({ behavior: 'smooth' });">Помощь</div>
-            <div class="fixed-btn" onclick="document.querySelector('#trainer-wrapper').scrollIntoView({ behavior: 'smooth' });">Тренажёр</div>
-        </div>
-    </div>
-
-
-    <script charset="UTF-8" type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/emailSend.js"></script>
-    <script charset="UTF-8">
-        emailjs.init({
-            publicKey: "6yC3wJof9IaSdyeEI",
-        });
-    </script>
-    <script charset="UTF-8">
-        const form = document.querySelector('form');
-        
-        form.addEventListener('submit',(event)=>{
-            event.preventDefault();
-
-            const inputSupport = document.querySelector('#support').value;
-
-            if(inputSupport){
-                SendEmail();
-            }
-            else{
-                alert('Нужно что-то написать');
-            }
-        })
-    </script>
-    <script src="js/selector.js"></script>
-    <script type="module" src="script.js" charset="UTF-8"></script>
 </body>
 </html>
