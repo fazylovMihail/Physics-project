@@ -1,0 +1,141 @@
+@import url('style.css');
+
+@media screen and (max-width:1375px){
+    .past_nav{
+        display: none;
+    }
+    h1{
+        font-size: 85px;
+    }
+    .h_paragraf{
+        font-size: 28px;
+    }
+    .class_name{
+        font-size: 65px;
+    }
+    .circle_btn{
+        height: 45px;
+        width: 45px;
+    }
+    .select_btn{
+        width: 100px;
+    }
+    .trainer_label{
+        padding: 0 50px;
+    }
+    .trainer_label_paragraf{
+        font-size: 35px;
+    }
+    .trainer_option_btn{
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:1200px){
+    header{
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+    }
+    .past_nav{
+        display: none;
+    }
+    h1{
+        font-size: 75px;
+    }
+    .h_paragraf{
+        font-size: 22px;
+    }
+    .class_name{
+        font-size: 55px;
+    }
+    .circle_btn{
+        height: 40px;
+        width: 40px;
+    }
+    .select_btn{
+        width: 80px;
+    }
+    .trainer_label{
+        padding: 0 25px;
+    }
+    .trainer_label_paragraf{
+        font-size: 30px;
+    }
+    .trainer_option_btn{
+        font-size: 30px;
+    }
+    .footer_h{
+        font-size: 25px;
+    }
+    .footer_email_text{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:1100px){
+    h1{
+        font-size: 70px;
+    }
+    .h_paragraf{
+        font-size: 18px;
+    }
+    .top_header{
+        flex-direction: column;
+        align-items: start;
+        gap: 25px;
+    }
+}
+@media screen and (max-width:950px){
+    h1{
+        font-size: 60px;
+    }
+    .trainer_option_btn_wrapper{
+        width: 100%;
+    }
+    .trainer_option_btn{
+        height: 150px;
+    }
+    .trainer_label{
+        padding: 0px;
+    }
+    .trainer_label_paragraf{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:850px){
+    body > *{
+        width: 90%;
+    }
+    header{
+        gap: 250px;
+    }
+    .key_btn_wrapper{
+        gap: 50px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    h1{
+        font-size: 35px;
+    }
+    .h_paragraf{
+        font-size: 16px;
+        white-space: normal;
+    }
+    footer{
+        height: 60vh;
+    }
+    .footer_wrapper{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .footer_contacts_wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .class_name{
+        font-size: 45px;
+    }
+    .product_window{
+        height: 500px;
+    }
+}

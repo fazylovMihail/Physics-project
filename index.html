@@ -4,25 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/adaptive.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <div class="top-header">
-            <p class="company-name">PHYS DREAM</p>
-            <div class="past-nav"><hr></div>
-            <div class="key-btn-wrapper">
-                <button class="key-btn">формулы</button>
-                <button class="key-btn">тренажёр</button>
-                <button class="key-btn">язык/RUS</button>
+        <div class="top_header">
+            <p class="company_name">PHYS DREAM</p>
+            <div class="past_nav"><hr></div>
+            <div class="key_btn_wrapper">
+                <button class="key_btn click" onclick="document.querySelector('.product_wrapper').scrollIntoView({behavior:'smooth'})">формулы</button>
+                <button class="key_btn click" onclick="document.querySelector('.trainer_wrapper').scrollIntoView({behavior:'smooth'})">тренажёр</button>
+                <button class="key_btn">язык/<span class="language-text click">RUS</span></button>
             </div>
         </div>
-        <div class="h-wrapper">
-            <h1>&nbsp&nbsp&nbsp
-                Сайт для<br><span class="red-color-h">поиска формул</span><br>по физике
+        <div class="h_wrapper">
+            <h1>&nbsp&nbsp
+                Сервис для<br><span class="red_color_h">поиска формул</span><br>по физике
             </h1>
-            <p class="h-paragraf">поможем найти формулу или написать шпаргалку</p>
+            <p class="h_paragraf">поможем найти формулу или написать шпаргалку</p>
         </div>
     </header>
+    <main>
+        <div class="product_wrapper">
+            <div class="product_window">
+                <p class="class_name">7 класс</p>
+            </div>
+            <div class="circle_btn_wrapper">
+                <button class="circle_btn select_btn"></button>
+                <button class="circle_btn"></button>
+                <button class="circle_btn"></button>
+            </div>
+        </div>
+        <div class="trainer_wrapper">
+            <div class="trainer_window">
+                <div class="trainer_label">
+                    <p class="trainer_label_paragraf">
+                        А теперь время проверить свои знания, нажми<br>начать, чтобы пройти тренировку
+                    </p>
+                </div>
+                <div class="trainer_option_btn_wrapper">
+                    <button class="trainer_option_btn left_option">Начать</button>
+                    <button class="trainer_option_btn right_option" onclick="document.querySelector('header').scrollIntoView({behavior:'smooth'})">Наверх</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_contacts_wrapper">
+                <p class="footer_h">Контакты</p>
+                <p class="footer_email_text">noname@gmail.com</p>
+                <button class="copy_email_btn">скопировать</button>
+            </div>
+            <div class="footer_form_wrapper">
+                <form action="" class="footer_form">
+                    <label for="">
+                        <p class="footer_h" style="text-align: center;">Что-то не работает?</p>
+                    </label>
+                    <div class="input_form_footer_wrapper">
+                        <input type="text" placeholder="пиши сюда" class="input_footer">
+                        <input type="submit" class="submit_footer">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
