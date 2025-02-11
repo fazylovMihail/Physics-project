@@ -88,6 +88,9 @@
     h1{
         font-size: 60px;
     }
+    .trainer_window{
+        flex-direction: column;
+    }
     .trainer_option_btn_wrapper{
         width: 100%;
     }

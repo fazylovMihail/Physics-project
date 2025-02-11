@@ -148,7 +148,7 @@ main > *{
     height: 50%;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     gap: 75px;
 }
 .trainer_label{
