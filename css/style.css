@@ -30,7 +30,7 @@ header{
     height: fit-content;
     width: fit-content;
     white-space: nowrap;
-    user-select: none;
+    color: #fff;
 }
 .past_nav{
     background-color: #D41E1E;
@@ -51,6 +51,7 @@ header{
     gap: 100px;
 }
 .key_btn{
+    position: relative;
     width: fit-content;
     background-color: transparent;
     color: #fff;
@@ -58,6 +59,20 @@ header{
     font-size: 22.5px;
     font-family: 'Prosto One';
     user-select: none;
+}
+.key_btn::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border: 0px solid #fff;
+    width: 0%;
+    transition: 0.3s;
+}
+.key_btn:hover::after{
+    width: 100%;
+    border: 1px solid #fff;
+    transition: 0.3s;
 }
 .click{
     cursor: pointer;
@@ -73,13 +88,13 @@ header{
     user-select: none;
 }
 h1{
-    font-size: 110px;
+    font-size: 6vw;
 }
 .red_color_h{
     color: #D41E1E;
 }
 .h_paragraf{
-    font-size: 40px;
+    font-size: 2vw;
 }
 
 main{
@@ -165,7 +180,6 @@ main > *{
     font-size: 40px;
     display: flex;
     text-align: center;
-    user-select: none;
 }
 .trainer_option_btn_wrapper{
     width: 40%;
@@ -180,8 +194,17 @@ main > *{
     font-size: 40px;
     font-family: 'Prosto One';
     border-radius: 15px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
+.trainer_option_btn:hover{
+    transition: 0.3s;
+    border-radius: 15px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
 }
 .left_option{
     background-color: #D41E1E;
@@ -203,9 +226,9 @@ footer{
 .footer_wrapper{
     color: #fff;
     width: 80%;
-    height: 100%;
+    height: 60%;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 150px;
 }
@@ -245,7 +268,7 @@ footer{
 }
 .input_footer{
     width: 100%;
-    height: 45px;
+    height: 55px;
     border-radius: 5px;
     border: none;
     padding-left: 15px;
@@ -259,8 +282,8 @@ footer{
     font-family: 'Prosto One';
     text-transform: lowercase;
     font-size: 17.5px;
-    width: 50%;
-    height: 46px;
+    width: 60%;
+    height: 56px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -270,3 +293,32 @@ footer{
     border-radius: 5px;
     cursor: pointer;
 }
+/* .footer_company_name{
+    height: 35%;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 2vw;
+}
+.name_footer_wrapper{
+    width: 20%;
+    height: 100%;
+    white-space: nowrap;
+}
+.name_footer_wrapper > p{
+    padding: 0 15px;
+}
+.company_footer_info{
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    text-align: center;
+} */
