@@ -164,7 +164,7 @@ main > *{
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 75px;
+    gap: 50px;
 }
 .trainer_label{
     width: 100%;
