@@ -1,6 +1,8 @@
+// ф-я создающая куки
 export function set_cookie(name, value){
     document.cookie = `${name}=${encodeURI(value)};`;
 }
+// ф-я получающая куки
 export function get_cookie(name){
     if(document.cookie){
         const cookie = decodeURI(document.cookie).split(';');
