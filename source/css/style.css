@@ -224,9 +224,6 @@ footer{
     display: grid;
     place-items: center;
 }
-footer > *{
-    outline: 1px solid #fff;
-}
 .footer_wrapper{
     color: #fff;
     width: 80%;
