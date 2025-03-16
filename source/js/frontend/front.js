@@ -1,6 +1,8 @@
 import { data_reader } from "../system/utilit.js";
 import { to_file } from "../data/model.js";
 
+// код для работы circle_btn и обработки нажатия на class_name
+
 // для добавления класса элементу
 function class_append(element, str){
     element.classList.add(str);
@@ -14,7 +16,6 @@ function class_delete(arr, str){
         }
     });
 }
-
 // Обработчик нажатий на circle_btn
 export function product_manager(element, arr, str, index){
     if(!element.classList.contains(str)){

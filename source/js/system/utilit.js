@@ -1,4 +1,4 @@
-const keys = ['_id', 'title', 'desc', 'create_at']; // ключи для объекта data.json
+const keys = ['title', 'desc', 'create_at']; // ключи для объекта data.json
 
 // ф-я получающая базу данных
 function data_reader(reader, file){
