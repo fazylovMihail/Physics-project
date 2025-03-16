@@ -1,4 +1,5 @@
-import { to_file, data_reader } from "../system/utilit.js";
+import { data_reader } from "../system/utilit.js";
+import { to_file } from "../data/model.js";
 
 function class_append(element, str){
     element.classList.add(str);
@@ -26,5 +27,5 @@ export function product_manager(element, arr, str, index){
     data_reader(reader);
     
     const product_to_btn = document.querySelector('.product_window');
-    product_to_btn.addEventListener('click', () => to_file('product.html', index));
+    product_to_btn.addEventListener('click', () => to_file(index, 'school_classes'));
 }

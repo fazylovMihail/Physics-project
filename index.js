@@ -1,4 +1,4 @@
-import { product_manager } from "./source/js/frontend/anim.js";
+import { product_manager } from "./source/js/frontend/front.js";
 
 // для работы circle_btn (*)
 const circle_btn = document.querySelectorAll('.circle_btn'), select_class_str = 'select_circle_btn';
