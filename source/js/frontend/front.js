@@ -18,7 +18,7 @@ export function circle_btn_manager(element, arr, str, index){
 
     const reader = (data) => {
         const wrapper = document.querySelector('.class_name');
-        for(let key of Array(data['school_classes'])){
+        for(let key of Array(data['data_keys'])){
             wrapper.innerHTML = key[index];
         }
     }; load_database(reader, 'arrays.json');
