@@ -18,11 +18,9 @@ export function circle_btn_manager(element, arr, str, index){
 
     const reader = (data) => {
         const wrapper = document.querySelector('.class_name');
-        for(let key of Array(data['data_keys'])){
-            wrapper.innerHTML = key[index];
-        }
-    }; load_database(reader, 'arrays.json');
+        wrapper.innerHTML = data['data'][index]['name'];
+    }; load_database(reader, 'data.json');
 
     const btn = document.querySelector('.product_window');
-    btn.addEventListener('click', () => {to_file(index, 'school_classes', 'product.html')});
+    btn.addEventListener('click', () => {to_file(index, 'product.html')});
 }

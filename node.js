@@ -2,7 +2,7 @@ import fs from "node:fs";
 
 let i;
 
-const data_keys = ["class7", "class8", "class9"], keys_data_obj = ["title", "desc"], sub = ['names', 'data'];
+const data_keys = ["class7", "class8", "class9"], keys_data_obj = ["title", "desc"], sub = ['name', 'data'];
 
 const class7Names = ['Скорость', 'Плотность','Сила тяжести','Сила упругости','Вес тела','Давление в твердых телах','Давление в жидкости/газе','Архимедова сила','Сила трения','Механическая работа','Мощность','Кинетическая энергия','Потенциальная энергия','Момент силы','КПД'];
 const class8Names = ['Количество теплоты','Теплота сгорания','Теплота плавления','Теплота парообразования','Закон Кулона','Сила электрического тока','Сопротивление проводника','Электрическое напряжение','Последовательное соединение проводников','Параллельное соединение проводников','Работа тока','Мощность тока','Закон Джоуля-Ленца'];
@@ -41,12 +41,9 @@ const c8 = sub.reduce((acc, key, index) => {
 //         acc[key] = class9[1][i][index]; return acc;
 //     }, {});
 // }
-let classes = [c7, c8, class9];
+let classes = [c7, c8, class9], finish = {data: []};
 for(i=0;i<classes.length;i++){
-    classes = data_keys.reduce((acc, key, index) => {
-        acc[key] = classes[index]; return acc;
-    }, {});
+    finish['data'].push(classes[i]);
 }
-// console.log(classes);
 
-fs.writeFileSync('./data/data.json', JSON.stringify(classes, null, 2), 'utf8');
+fs.writeFileSync('./data/data.json', JSON.stringify(finish, null, 2), 'utf8');

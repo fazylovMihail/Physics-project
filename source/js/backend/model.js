@@ -1,9 +1,9 @@
 import { set_cookie } from "../system/cookie.js";
 import { load_database } from "./load_database.js";
 
-export function to_file(index, str, file){
+export function to_file(index, file){
     const reader = (data) => {
-        set_cookie('Class_Name', data[str][index]);
+        set_cookie('Class_Name', index);
         location.href = `./${file}`;
-    }; load_database(reader, 'arrays.json');
+    }; load_database(reader, 'data.json');
 }
