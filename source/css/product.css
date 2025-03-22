@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&family=Rubik+Mono+One&display=swap');
+
+body{
+    width: 100%;
+    margin: 0;
+    font-family: 'Prosto One';
+    background-color: #000;
+    overflow-x: hidden;
+}
+body > *{
+    margin: 0 auto;
+}
+
+.wrapper{
+    background-color: black;
+    display: flex;
+    height: 100vh;
+}
+.left_wrapper{
+    width: 75%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.left_wrapper *{
+    border: 1px solid #fff;
+}
+.left_content_wrapper{
+    width: 80%;
+    height: 80%;
+    color: #fff;
+}
+.header_h_wrapper{
+    width: 100%;
+    height: 12.5%;
+    display: grid;
+    place-items: center;
+}
+.header_content_wrapper{
+    width: 100%;
+    height: 87.5%;
+    display: grid;
+    place-items: center;
+}
+.header_content_wrapper > p{
+    width: 50%;
+    height: 50%;
+}
+h1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.right_wrapper{
+    background-color: #fff;
+    width: 25%;
+    height: 100%;
+}
+.right_wrapper *{
+    border: 1px solid #000;
+}
