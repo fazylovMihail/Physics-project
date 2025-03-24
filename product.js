@@ -4,9 +4,16 @@ import { Product } from "./source/js/frontend/class.js";
 
 const index = get_cookie('Class_Name'), body = document.querySelector('body'),
 reader = (data) => {
-    const database = data['data'][index]['data'], right_content_wrapper = document.querySelector('.right_content_wrapper');
+    const database = data['data'][index]['data'], cards = [],
+    right_content_wrapper = document.querySelector('.right_content_wrapper'), left_wrapper = document.querySelector('.left_wrapper');
+
     for(let i=0;i<database.length;i++){
-        const card = new Product(database[i]);
-        right_content_wrapper.innerHTML += card.Drow_Card();
+        const {title, desc} = database[i], card = new Product(title, desc); cards.push(card);
+        right_content_wrapper.innerHTML += cards[i].Drow_Card();
     }
+
+    const content_card = document.querySelectorAll('.content_card');
+    for(let i=0;i<content_card.length;i++) content_card[i].addEventListener('click', () => {
+        left_wrapper.innerHTML = cards[i].Drow_Window();
+    });
 }; load_database(reader, 'data.json');

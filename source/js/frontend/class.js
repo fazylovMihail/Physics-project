@@ -1,5 +1,8 @@
 export class Product{
-    constructor(obj){Object.assign(this, obj)}
+    constructor(title, desc){
+        this.title = title;
+        this.desc = desc;
+    }
     Drow_Card(){
         return `<div class="content_card">${this.title}</div>`;
     }
