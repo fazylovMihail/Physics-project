@@ -75,6 +75,7 @@ body > *{
     padding: 50px 0;
 }
 .content_card{
+    text-align: center;
     width: 250px;
     height: 100px;
     display: grid;
