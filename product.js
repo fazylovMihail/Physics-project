@@ -2,10 +2,12 @@ import { get_cookie } from "./source/js/system/cookie.js";
 import { load_database } from "./source/js/backend/load_database.js";
 import { Product } from "./source/js/frontend/class.js";
 
-const index = get_cookie('Class_Name'), body = document.querySelector('body'),
+const index = get_cookie('Class_Name'),
 reader = (data) => {
     const database = data['data'][index]['data'], cards = [],
     right_content_wrapper = document.querySelector('.right_content_wrapper'), left_wrapper = document.querySelector('.left_wrapper');
+
+    left_wrapper.innerHTML = '<h1 id="default_h">Выбери формулу из правого окна :)</h1>'
 
     for(let i=0;i<database.length;i++){
         const {title, desc} = database[i], card = new Product(title, desc); cards.push(card);
