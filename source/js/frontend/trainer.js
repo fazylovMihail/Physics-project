@@ -6,7 +6,7 @@ function to_up(){
 function rand_manager(data){
     const database = data['data'], rand_class = Math.floor(Math.random() * database.length),
     finish_data = data['data'][rand_class]['data'], true_index = Math.floor(Math.random() * finish_data.length),
-    true_formul = finish_data[true_index]; finish_data.slice(true_formul);
+    true_formul = finish_data[true_index]; finish_data.splice(true_index, 1);
     
     const false_index = Math.floor(Math.random() * finish_data.length), false_formul = finish_data[false_index];
 
