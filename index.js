@@ -10,4 +10,5 @@ for(let i=0;i<circle_btn.length;i++){
     circle_btn[i].addEventListener('click', () => {circle_btn_manager(circle_btn[i], circle_btn, select_class_str, i)})
 }
 
-trainer_window_switch(false);
+let trainer_count = 0;
+trainer_window_switch(false, trainer_count);

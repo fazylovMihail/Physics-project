@@ -23,15 +23,17 @@ function rand_order_manager(arr){
 function true_manager(el, ok){(ok)? el.classList.add('true_option'): el.classList.remove('true_option')}
 function false_manager(el, ok){(ok)? el.classList.add('left_option'): el.classList.remove('left_option')}
 
-export function trainer_window_switch(ok){
+export function trainer_window_switch(ok, count=0){
     const trainer_label_p = document.querySelector('.trainer_label_paragraf'),
     trainer_option_btns = document.querySelectorAll('.trainer_option_btn'),
     [start, up] = trainer_option_btns;
 
+    trainer_option_btns.forEach(el => {el.classList.remove('un_click')});
+
     const true_for_listener = () => {
         true_manager(start, true); 
         trainer_option_btns.forEach(el => {el.classList.add('un_click')});
-        setTimeout(() => {up.removeEventListener('click', false_for_listener); start.removeEventListener('click', true_for_listener); trainer_window_switch(true)}, 500); return},
+        setTimeout(() => {up.removeEventListener('click', false_for_listener); start.removeEventListener('click', true_for_listener); trainer_window_switch(true, count)}, 500); return},
     false_for_listener = () => {false_manager(up, true); true_for_listener()};
     
     if(!ok){
@@ -46,6 +48,10 @@ export function trainer_window_switch(ok){
         up.addEventListener('click', to_up);
     }
     else{
+        count++;
+        
+        if(count > 5){trainer_window_switch(false, count); return}
+
         const reader = (data) => {
             const [true_formul, false_formul] = rand_manager(data); console.log(true_formul, false_formul);
             trainer_label_p.innerHTML = true_formul.title;
@@ -53,9 +59,10 @@ export function trainer_window_switch(ok){
             rand_order_manager(trainer_option_btns);
             start.innerHTML = true_formul.desc; up.innerHTML = false_formul.desc;
             start.classList.remove('left_option');
-            trainer_option_btns.forEach(el => {el.classList.remove('un_click'); true_manager(el, false); false_manager(el, false)});
+            trainer_option_btns.forEach(el => {true_manager(el, false); false_manager(el, false)});
             start.removeEventListener('click', go_forward); up.removeEventListener('click', to_up);
             start.addEventListener('click', true_for_listener); up.addEventListener('click', false_for_listener);
         }; load_database(reader, 'data.json');
+        console.log(count);
     }
 }
