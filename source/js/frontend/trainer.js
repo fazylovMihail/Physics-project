@@ -6,11 +6,11 @@ function to_up(){
 function rand_manager(data){
     const database = data['data'], rand_class = Math.floor(Math.random() * database.length),
     finish_data = data['data'][rand_class]['data'], true_index = Math.floor(Math.random() * finish_data.length),
-    true_formul = finish_data[true_index]; finish_data.splice(true_index, 1);
+    true_formul = finish_data[true_index];
     
     const false_index = Math.floor(Math.random() * finish_data.length), false_formul = finish_data[false_index];
 
-    return [true_formul, false_formul]
+    return [true_formul, false_formul];
 }
 function go_forward(){trainer_window_switch(true)}
 function rand_order_manager(arr){
@@ -19,16 +19,30 @@ function rand_order_manager(arr){
     }
     for(let i=0;i<arr.length;i++){arr[i].style.order = orders[i]}
 }
+
+function true_manager(el, ok){(ok)? el.classList.add('true_option'): el.classList.remove('true_option')}
+function false_manager(el, ok){(ok)? el.classList.add('left_option'): el.classList.remove('left_option')}
+
 export function trainer_window_switch(ok){
     const trainer_label_p = document.querySelector('.trainer_label_paragraf'),
     trainer_option_btns = document.querySelectorAll('.trainer_option_btn'),
     [start, up] = trainer_option_btns;
+
+    const true_for_listener = () => {
+        true_manager(start, true); 
+        trainer_option_btns.forEach(el => {el.classList.add('un_click')});
+        setTimeout(() => {up.removeEventListener('click', false_for_listener); start.removeEventListener('click', true_for_listener); trainer_window_switch(true)}, 500); return},
+    false_for_listener = () => {false_manager(up, true); true_for_listener()};
     
     if(!ok){
         trainer_label_p.innerHTML = 'А теперь время проверить свои знания, нажми<br>начать, чтобы пройти тренировку'
         start.innerHTML = 'Начать'; up.innerHTML = 'Наверх';
         start.style.order = 1; up.style.order = 2;
+        start.classList.add('left_option');
+
+        true_manager(start, false); false_manager(up, false);
         start.addEventListener('click', go_forward);
+        start.removeEventListener('click', true_for_listener); up.removeEventListener('clicl', false_for_listener);
         up.addEventListener('click', to_up);
     }
     else{
@@ -38,7 +52,10 @@ export function trainer_window_switch(ok){
 
             rand_order_manager(trainer_option_btns);
             start.innerHTML = true_formul.desc; up.innerHTML = false_formul.desc;
+            start.classList.remove('left_option');
+            trainer_option_btns.forEach(el => {el.classList.remove('un_click'); true_manager(el, false); false_manager(el, false)});
             start.removeEventListener('click', go_forward); up.removeEventListener('click', to_up);
+            start.addEventListener('click', true_for_listener); up.addEventListener('click', false_for_listener);
         }; load_database(reader, 'data.json');
     }
 }

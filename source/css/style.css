@@ -323,3 +323,8 @@ footer{
     font-size: 1.2vw;
     text-align: center;
 } */
+.true_option{
+    background-color: #1ed43c;
+    color: #000;
+}
+.un_click{pointer-events: none;}
