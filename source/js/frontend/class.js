@@ -4,7 +4,7 @@ export class Product{
         this.desc = desc;
     }
     Drow_Card(){
-        return `<div class="content_card">${this.title}</div>`;
+        return `<button class="content_card">${this.title}</button>`;
     }
     Drow_Window(){
         return `<div class="left_content_wrapper">
