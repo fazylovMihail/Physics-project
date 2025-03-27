@@ -22,6 +22,8 @@ function rand_order_manager(arr){
     for(let i=0;i<arr.length;i++){arr[i].style.order = orders[i]}
 }
 
+function un_click(arr, ok){(ok)? arr.forEach(el => {el.classList.add('un_click')}): arr.forEach(el => {el.classList.remove('un_click')})}
+
 function true_manager(el, ok){(ok)? el.classList.add('true_option'): el.classList.remove('true_option')}
 function false_manager(el, ok){(ok)? el.classList.add('left_option'): el.classList.remove('left_option')}
 
@@ -30,13 +32,18 @@ export function trainer_window_switch(ok, count=0){
     trainer_option_btns = document.querySelectorAll('.trainer_option_btn'),
     [start, up] = trainer_option_btns;
 
-    trainer_option_btns.forEach(el => {el.classList.remove('un_click')});
+    un_click(trainer_option_btns, false);
 
     const true_for_listener = () => {
-        true_manager(start, true); 
-        trainer_option_btns.forEach(el => {el.classList.add('un_click')});
-        setTimeout(() => {up.removeEventListener('click', false_for_listener); start.removeEventListener('click', true_for_listener); trainer_window_switch(true, count)}, 1000); return},
-    false_for_listener = () => {false_manager(up, true); setTimeout(true_for_listener, 500)};
+        true_manager(start, true);
+        un_click(trainer_option_btns, true);
+        setTimeout(() => {up.removeEventListener('click', false_for_listener); start.removeEventListener('click', true_for_listener); trainer_window_switch(true, count)}, 1000); return
+    },
+    false_for_listener = () => {
+        un_click(trainer_option_btns, true);
+        false_manager(up, true);
+        setTimeout(true_for_listener, 500)
+    };
     
     if(!ok){
         trainer_label_p.innerHTML = 'А теперь время проверить свои знания, нажми<br>начать, чтобы пройти тренировку'
