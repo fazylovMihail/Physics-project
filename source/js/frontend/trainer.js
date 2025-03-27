@@ -22,6 +22,10 @@ function rand_order_manager(arr){
     for(let i=0;i<arr.length;i++){arr[i].style.order = orders[i]}
 }
 
+function font_family_btns_manager(arr, ok){
+    arr.forEach(el => {(ok)? el.style.fontFamily = 'Prosto One': el.style.fontFamily = 'Rubik Mono One'});
+}
+
 function un_click(arr, ok){(ok)? arr.forEach(el => {el.classList.add('un_click')}): arr.forEach(el => {el.classList.remove('un_click')})}
 
 function true_manager(el, ok){(ok)? el.classList.add('true_option'): el.classList.remove('true_option')}
@@ -51,6 +55,7 @@ export function trainer_window_switch(ok, count=0){
         start.style.order = 1; up.style.order = 2;
         start.classList.add('left_option');
 
+        font_family_btns_manager(trainer_option_btns, false);
         true_manager(start, false); false_manager(up, false);
         start.addEventListener('click', go_forward);
         start.removeEventListener('click', true_for_listener); up.removeEventListener('clicl', false_for_listener);
@@ -65,6 +70,7 @@ export function trainer_window_switch(ok, count=0){
             const [true_formul, false_formul] = rand_manager(data); console.log(true_formul, false_formul);
             trainer_label_p.innerHTML = true_formul.title;
 
+            font_family_btns_manager(trainer_option_btns, true);
             rand_order_manager(trainer_option_btns);
             start.innerHTML = true_formul.desc; up.innerHTML = false_formul.desc;
             start.classList.remove('left_option');
