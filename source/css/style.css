@@ -171,14 +171,15 @@ main > *{
 .trainer_label{
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .trainer_label_paragraf{
-    color: #000;
+    color: #fff;
     font-size: 40px;
     display: flex;
     text-align: center;

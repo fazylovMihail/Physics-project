@@ -8,6 +8,8 @@ function rand_manager(data){
     finish_data = data['data'][rand_class]['data'], true_index = Math.floor(Math.random() * finish_data.length),
     true_formul = finish_data[true_index];
     
+    finish_data.splice(true_index, 1); console.log(finish_data);
+
     const false_index = Math.floor(Math.random() * finish_data.length), false_formul = finish_data[false_index];
 
     return [true_formul, false_formul];
@@ -33,8 +35,8 @@ export function trainer_window_switch(ok, count=0){
     const true_for_listener = () => {
         true_manager(start, true); 
         trainer_option_btns.forEach(el => {el.classList.add('un_click')});
-        setTimeout(() => {up.removeEventListener('click', false_for_listener); start.removeEventListener('click', true_for_listener); trainer_window_switch(true, count)}, 500); return},
-    false_for_listener = () => {false_manager(up, true); true_for_listener()};
+        setTimeout(() => {up.removeEventListener('click', false_for_listener); start.removeEventListener('click', true_for_listener); trainer_window_switch(true, count)}, 1000); return},
+    false_for_listener = () => {false_manager(up, true); setTimeout(true_for_listener, 500)};
     
     if(!ok){
         trainer_label_p.innerHTML = 'А теперь время проверить свои знания, нажми<br>начать, чтобы пройти тренировку'
