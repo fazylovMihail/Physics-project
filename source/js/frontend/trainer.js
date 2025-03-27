@@ -46,7 +46,7 @@ export function trainer_window_switch(ok, count=0){
     };
     
     if(!ok){
-        trainer_label_p.innerHTML = 'А теперь время проверить свои знания, нажми<br>начать, чтобы пройти тренировку'
+        trainer_label_p.innerHTML = 'А теперь время проверить свои знания, нажмите<br>начать, чтобы пройти тренировку'
         start.innerHTML = 'Начать'; up.innerHTML = 'Наверх';
         start.style.order = 1; up.style.order = 2;
         start.classList.add('left_option');

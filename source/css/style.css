@@ -180,7 +180,7 @@ main > *{
 }
 .trainer_label_paragraf{
     color: #fff;
-    font-size: 40px;
+    font-size: 32.5px;
     display: flex;
     text-align: center;
 }
@@ -194,11 +194,11 @@ main > *{
 .trainer_option_btn{
     width: 100%;
     height: 250px;
-    font-size: 40px;
-    font-family: 'Prosto One';
+    font-size: 27.5px;
+    font-family: 'Rubik Mono One';
     border-radius: 15px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
+    /* border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px; */
     border: none;
     cursor: pointer;
     transition: 0.3s;
@@ -326,6 +326,6 @@ footer{
 } */
 .true_option{
     background-color: #1ed43c;
-    color: #000;
+    color: #fff;
 }
 .un_click{pointer-events: none;}
