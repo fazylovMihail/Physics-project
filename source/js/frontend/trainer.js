@@ -58,7 +58,7 @@ export function trainer_window_switch(ok, count=0){
         font_family_btns_manager(trainer_option_btns, false);
         true_manager(start, false); false_manager(up, false);
         start.addEventListener('click', go_forward);
-        start.removeEventListener('click', true_for_listener); up.removeEventListener('clicl', false_for_listener);
+        start.removeEventListener('click', true_for_listener); up.removeEventListener('click', false_for_listener);
         up.addEventListener('click', to_up);
     }
     else{
