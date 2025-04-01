@@ -1,5 +1,5 @@
 export class Product{
-    constructor(title, desc){
+    constructor(title, desc, title_formul){
         this.title = title;
         this.desc = desc;
     }
@@ -16,5 +16,14 @@ export class Product{
                         <p>где ...</p>
                     </div>
                 </div>`
+    }
+    Drow_Start_Window(){
+        return `<div class="trainer_label">
+                    <p class="trainer_label_paragraf">${this.title}</p>
+                </div>
+                <div class="trainer_option_btn_wrapper">
+                    <button class="trainer_option_btn">Начать</button>
+                    <button class="trainer_option_btn">Наверх</button>
+                </div>`;
     }
 }
