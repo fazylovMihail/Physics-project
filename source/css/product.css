@@ -137,6 +137,7 @@ h1{
         width: 60%;
         height: 40vh;
         margin: 0 auto;
+        border-radius: 5px;
     }
     .back_btn{
         width: 50px;
