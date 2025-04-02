@@ -122,5 +122,44 @@ h1{
 }
 #default_h{
     color: #fff;
-    font-size: 50px;
+    font-size: 45px;
+}
+
+@media screen and (max-width:1375px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .left_wrapper{
+        height: 50vh;
+    }
+    .right_wrapper{
+        width: 60%;
+        height: 40vh;
+        margin: 0 auto;
+    }
+    .back_btn{
+        width: 50px;
+    }
+}
+@media screen and (max-width:1200px){
+    .header_h_wrapper{
+        font-size: 10px;
+    }
+    .back_btn{
+        width: 45px;
+    }
+}
+@media screen and (max-width:850px){
+    .left_wrapper{
+        width: 100%;
+    }
+    .right_wrapper{
+        width: 80%;
+    }
+    .header_content_wrapper h2{
+        font-size: 20px;
+    }
+    .content_card{
+        font-size: 17.5px;
+    }
 }

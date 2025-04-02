@@ -29,6 +29,9 @@
     .trainer_option_btn{
         font-size: 35px;
     }
+    .wrapper{
+        flex-direction: column;
+    }
 }
 @media screen and (max-width:1200px){
     header{
@@ -137,7 +140,7 @@
         align-items: center;
     }
     .class_name{
-        font-size: 45px;
+        font-size: 42.5px;
     }
     .product_window{
         height: 500px;
