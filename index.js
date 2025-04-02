@@ -11,5 +11,5 @@ for(let i=0;i<circle_btn.length;i++){
     circle_btn[i].addEventListener('click', () => {circle_btn_manager(circle_btn[i], circle_btn, select_class_str, i)})
 }
 
-let cur_question = 0, counter = {true: 0, false: 0};
-load_database((data) => load_question(data, cur_question, false, counter), 'data.json');
+let cur_question = 0, counter = {true: 0, false: 0}, result = 'А теперь время проверить свои знания, нажмите<br>начать, чтобы пройти тренировку';
+load_database((data) => load_question(data, cur_question, false, counter, result), 'data.json');

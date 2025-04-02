@@ -1,6 +1,6 @@
 import { Product } from "./class.js";
 
-export function load_question(data, cur_question, bool, counter){
+export function load_question(data, cur_question, bool, counter, result){
     let true_index;
 
     const formuls = random_formul(data['data']),
@@ -9,7 +9,7 @@ export function load_question(data, cur_question, bool, counter){
 
     trainer_window.innerHTML = card.Drow_Start_Window();
 
-    const trainer_option_btns = document.querySelectorAll('.trainer_option_btn');
+    const trainer_option_btns = document.querySelectorAll('.trainer_option_btn'), trainer_label_paragraf = document.querySelector('.trainer_label_paragraf');
 
     if(bool){
         for(let i=formuls.length-1;i>0;i--){
@@ -27,29 +27,33 @@ export function load_question(data, cur_question, bool, counter){
                 const check = check_answer(trainer_option_btns, true_index, event);
                 if(check) {
                     if(cur_question > 5) return;
+
                     counter['true']++;
-                    load_question(data, cur_question, true, counter);
+                    trainer_anim_manager(true, trainer_option_btns, true_index);
                 } else{
                     counter['false']++;
-                    load_question(data, cur_question, true, counter);
+                    trainer_anim_manager(false, trainer_option_btns, true_index);
                 }
 
-                if(cur_question >= 5){
-                    cur_question = 0;
-                    load_question(data, cur_question, false, counter);
-                    alert(`Правильные: ${counter['true']} / Неправильные: ${counter['false']}`);
-                    for(let key of Object.keys(counter)){counter[key] = 0};
-                }
+                setTimeout(() => {
+                    load_question(data, cur_question, true, counter, result);
+                    if(cur_question >= 5){
+                        cur_question = 0;
+                        result = `Правильные: ${counter['true']} / Неправильные: ${counter['false']}`
+                        load_question(data, cur_question, false, counter, result);
+                        for(let key of Object.keys(counter)){counter[key] = 0};
+                    }
+                }, 1300);
             });
         });
     
         cur_question++; console.log(counter);
     }
     else{
-        const [start, up] = trainer_option_btns, trainer_label_paragraf = document.querySelector('.trainer_label_paragraf');
-        trainer_label_paragraf.innerHTML = 'А теперь время проверить свои знания, нажмите<br>начать, чтобы пройти тренировку';
+        const [start, up] = trainer_option_btns;
+        trainer_label_paragraf.innerHTML = result;
 
-        start.classList.add('left_option'); start.addEventListener('click', () => {load_question(data, cur_question, true, counter)})
+        start.classList.add('left_option'); start.addEventListener('click', () => {load_question(data, cur_question, true, counter, result)})
         up.addEventListener('click', to_up);
     }
 }
@@ -68,3 +72,19 @@ function check_answer(arr, true_index, event){
 }
 
 function to_up(){window.scrollTo({top: 0, behavior: "smooth"})}
+
+function trainer_anim_manager(bool, arr, true_index){
+    arr.forEach(el => el.classList.add('un_click'));
+    
+    const arr_clone = [...arr], true_btn = arr_clone[true_index]; arr_clone.splice(true_index, 1);
+    const [false_btn] = arr_clone;
+
+    if(bool){
+        true_btn.classList.add('true_option');
+        setTimeout(() => {false_btn.classList.add('left_option')}, 700);
+    }
+    else{
+        false_btn.classList.add('left_option');
+        setTimeout(() => {true_btn.classList.add('true_option')}, 700);
+    }
+}
