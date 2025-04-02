@@ -161,5 +161,16 @@ h1{
     }
     .content_card{
         font-size: 17.5px;
+        width: 200px;
+        height: 80px;
+    }
+    #default_h{
+        font-size: 30px;
+    }
+    .back_btn{
+        width: 40px;
+    }
+    .header_h_wrapper{
+        font-size: 7.5px;
     }
 }
