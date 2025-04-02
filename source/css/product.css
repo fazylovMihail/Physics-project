@@ -130,6 +130,9 @@ h1{
     .wrapper{
         flex-direction: column;
     }
+    .wrapper > *{
+        border-radius: 5px;
+    }
     .left_wrapper{
         height: 50vh;
     }
