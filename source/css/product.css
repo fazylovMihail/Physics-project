@@ -48,6 +48,7 @@ body > *{
 .header_content_wrapper > p{
     width: 50%;
     height: 50%;
+    font-size: 25px;
 }
 .left_h{
     font-family: 'Rubik Mono One';
@@ -158,6 +159,9 @@ h1{
     }
     .header_content_wrapper h2{
         font-size: 20px;
+    }
+    .header_content_wrapper p{
+        font-size: 10px;
     }
     .content_card{
         font-size: 17.5px;

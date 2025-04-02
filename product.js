@@ -10,7 +10,7 @@ reader = (data) => {
     left_wrapper.innerHTML = '<h1 id="default_h">Выбери формулу из правого окна :)</h1>'
 
     for(let i=0;i<database.length;i++){
-        const {title, desc} = database[i], card = new Product(title, desc); cards.push(card);
+        const {title, desc, info} = database[i], card = new Product(title, desc, info); cards.push(card);
         right_content_wrapper.innerHTML += cards[i].Drow_Card();
     }
 

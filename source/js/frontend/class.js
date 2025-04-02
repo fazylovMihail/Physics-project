@@ -2,6 +2,7 @@ export class Product{
     constructor(title, desc, title_formul){
         this.title = title;
         this.desc = desc;
+        this.title_formul = title_formul;
     }
     Drow_Card(){
         return `<button class="content_card">${this.title}</button>`;
@@ -13,7 +14,7 @@ export class Product{
                     </div>
                     <div class="header_content_wrapper">
                         <h2>${this.desc}</h2>
-                        <p>где ...</p>
+                        <p>где ${this.title_formul}</p>
                     </div>
                 </div>`
     }
