@@ -1,3 +1,4 @@
+import { load_database } from "../backend/load_database.js";
 import { Product } from "./class.js";
 
 export function load_question(data, cur_question, bool, counter, result){
@@ -40,7 +41,7 @@ export function load_question(data, cur_question, bool, counter, result){
                     if(cur_question >= 5){
                         cur_question = 0;
                         result = `Правильные: ${counter['true']} / Неправильные: ${counter['false']}`
-                        load_question(data, cur_question, false, counter, result);
+                        load_database((data) => {load_question(data, cur_question, false, counter, result)}, 'data.json');
                         for(let key of Object.keys(counter)){counter[key] = 0};
                     }
                 }, 1300);
